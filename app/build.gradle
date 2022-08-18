@@ -1,0 +1,104 @@
+plugins {
+    id 'com.android.application'
+    id 'io.michaelrocks.paranoid'
+    id 'top.niunaijun.blackobfuscator'
+}
+
+
+android {
+    compileSdk 32
+    
+    defaultConfig {
+        applicationId rootProject.ext.appId
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        versionCode 5
+        versionName "1.4"
+        ndk {
+            abiFilters 'armeabi-v7a','arm64-v8a'
+        }
+        resConfigs "en"
+        multiDexEnabled true
+    }
+    
+    signingConfigs {
+         release {
+             keyAlias 'EditLike'
+             keyPassword '##EditLike10102003'
+             storePassword '##EditLike10102003'
+             storeFile file("/storage/emulated/0/AndroidIDEProjects/Edit Like/Keystore/EditLike.jks")
+             v1SigningEnabled true
+             v2SigningEnabled true
+             enableV3Signing = true
+         } 
+         debug {
+             keyAlias 'EditLike'
+             keyPassword '##EditLike10102003'
+             storePassword '##EditLike10102003'
+             storeFile file("/storage/emulated/0/AndroidIDEProjects/Edit Like/Keystore/EditLike.jks")
+             v1SigningEnabled true
+             v2SigningEnabled true
+             enableV3Signing = true
+         } 
+    }
+
+          
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            ndk {
+                 debugSymbolLevel 'SYMBOL_TABLE'
+                }
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+    
+    compileOptions {
+		sourceCompatibility JavaVersion.VERSION_17
+		targetCompatibility JavaVersion.VERSION_17
+	}
+	
+	buildFeatures {
+        viewBinding false
+    }
+}
+
+paranoid {
+  enabled true
+  cacheable false
+  includeSubprojects false
+  obfuscationSeed null
+}
+
+BlackObfuscator {
+    // 是否启用
+    enabled true
+    // 混淆深度
+    depth 2
+    // 需要混淆的包或者类(匹配前面一段)
+    obfClass = ["com.editlike.app"]
+    // blackClass中的包或者类不会进行混淆(匹配前面一段)
+    blackClass = ["com.theartofdev.edmodo.cropper"]
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.arthenica:ffmpeg-kit-full:4.5.1-1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.github.QuadFlask:colorpicker:0.0.15'
+    implementation files ('libs/unity-ads.aar')
+}

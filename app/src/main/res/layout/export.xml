@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal|center_vertical"
+        android:id="@+id/linear2"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+        
+        <LinearLayout
+            android:gravity="center_horizontal|center_vertical"
+            android:id="@+id/linear6"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp">
+            
+            <LinearLayout
+                android:id="@+id/linear9"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+                
+                <LinearLayout
+                    android:gravity="center_horizontal|center_vertical"
+                    android:id="@+id/savedview"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    
+                    <LinearLayout
+                        android:gravity="center_horizontal|center_vertical"
+                        android:id="@+id/linear8"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+                        
+                        <ImageView
+                            android:id="@+id/imageview4"
+                            android:layout_height="30dp"
+                            android:layout_width="30dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/tickicondownload"/>
+                        
+                        <TextView
+                            android:id="@+id/textview5"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:padding="8dp"
+                            android:text="SAVED TO DEVICE"
+                            android:textColor="#7289DA"
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+                        
+                    
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:gravity="center_horizontal|center_vertical"
+                        android:id="@+id/sharebutton"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+                        
+                        <TextView
+                            android:id="@+id/textview3"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:padding="8dp"
+                            android:text="SHARE"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+                        
+                        <ImageView
+                            android:id="@+id/imageview2"
+                            android:layout_height="20dp"
+                            android:layout_width="20dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/rightblackicon"/>
+                        
+                    
+                    </LinearLayout>
+                    
+                
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:background="#FFFFFF"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:id="@+id/exportingview"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    
+                    <ProgressBar
+                        android:id="@+id/progressbar1"
+                        android:indeterminate="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:max="100000"
+                        style="?android:progressBarStyleHorizontal"/>
+                    
+                    <TextView
+                        android:gravity="center_horizontal|center_vertical"
+                        android:id="@+id/textview1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:padding="8dp"
+                        android:text="Exporting video"
+                        android:textColor="#000000"
+                        android:textSize="14sp"/>
+                    
+                    <LinearLayout
+                        android:gravity="center_horizontal|center_vertical"
+                        android:id="@+id/linear5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:layout_width="200dp"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+                        
+                        <ImageView
+                            android:id="@+id/imageview3"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_width="15dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/infogreyicon"/>
+                        
+                        <TextView
+                            android:id="@+id/textview4"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Recommended to stay on app and not move to background"
+                            android:textColor="#424242"
+                            android:textSize="12sp"/>
+                        
+                    
+                    </LinearLayout>
+                    
+                
+                </LinearLayout>
+                
+            
+            </LinearLayout>
+            
+            <LinearLayout
+                android:gravity="center_horizontal|center_vertical"
+                android:id="@+id/banneradview"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="8dp"/>
+            
+        
+        </LinearLayout>
+        
+    
+    </LinearLayout>
+    
+
+</LinearLayout>
