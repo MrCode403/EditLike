@@ -7,8 +7,11 @@
   </a>
 </div>
 
-# EditLike
-Edit Like is a tweet like memes video editor providing already setup tweet templates
+<div align='center'>
 
-# Availability
-Available in google playstore
+<h1> EditLike<br>
+A Tweet Meme video editor
+</h1>
+
+</div>
+Edit Like is a tweet like memes video editor providing already setup tweet templates
