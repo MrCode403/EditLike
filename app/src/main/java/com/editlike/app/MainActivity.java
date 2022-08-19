@@ -242,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
 		LinearLayout videosizebutton = (LinearLayout) videosizeview.findViewById(R.id.videosizebutton);
 		LinearLayout videosizebackground = (LinearLayout) videosizeview.findViewById(R.id.videosizebackground);
 		LinearLayout replacebutton = (LinearLayout) videosizeview.findViewById(R.id.replacebutton);
+        LinearLayout soundbutton = (LinearLayout) videosizeview.findViewById(R.id.soundbutton);
 
 		// EVERYTHING ON INITIALISE ~~
         if(getIntent().hasExtra("TEMPLATE")) {
