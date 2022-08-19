@@ -151,7 +151,8 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 
 		/* APP LOGS GENERATOR (com.itsaky.androidide.logsender.LogSender) */
-
+        
+        
 		/* SET XML LAYOUT - activity_main.xml (res/layout) */
 		setContentView(R.layout.activity_main);
 
