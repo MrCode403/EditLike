@@ -31,7 +31,6 @@ import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.itsaky.androidide.logsender.LogSender;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import de.hdodenhof.circleimageview.*;
@@ -152,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 
 		/* APP LOGS GENERATOR (com.itsaky.androidide.logsender.LogSender) */
-		LogSender.startLogging(this);
 
 		/* SET XML LAYOUT - activity_main.xml (res/layout) */
 		setContentView(R.layout.activity_main);
