@@ -79,6 +79,28 @@
 				android:textSize="10sp"
 				android:textColor="#FFFFFF" />
 		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/soundbutton"
+			android:layout_width="55dp"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="15dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical">
+			<ImageView
+				android:id="@+id/imageview9"
+				android:layout_width="25dp"
+				android:layout_height="25dp"
+				android:padding="3dp"
+				android:src="@drawable/speakericon"
+				android:scaleType="centerInside" />
+			<TextView
+				android:id="@+id/textview11"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Sound"
+				android:textSize="10sp"
+				android:textColor="#FFFFFF" />
+		</LinearLayout>
 	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/trimbarbackground"
