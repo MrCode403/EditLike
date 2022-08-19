@@ -10,7 +10,12 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
+import android.graphics.*;
+import android.graphics.drawable.*;
+import android.content.res.*;
 import android.net.Uri;
+import android.app.*;
+import android.content.*;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -243,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
 		LinearLayout videosizebackground = (LinearLayout) videosizeview.findViewById(R.id.videosizebackground);
 		LinearLayout replacebutton = (LinearLayout) videosizeview.findViewById(R.id.replacebutton);
         LinearLayout soundbutton = (LinearLayout) videosizeview.findViewById(R.id.soundbutton);
+        ImageView imageview9 = (ImageView) videosizeview.findViewById(R.id.imageview9);
 
 		// EVERYTHING ON INITIALISE ~~
         if(getIntent().hasExtra("TEMPLATE")) {
@@ -590,6 +596,13 @@ public class MainActivity extends AppCompatActivity {
 				startActivityForResult(REPLACEVIDEO, REQ_CD_PICKVIDEO);
 			}
 		});
+        
+        soundbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageview9.setImageResource(R.drawable.speakermuteicon);
+            }
+        });
 
 		// VIDEOSIZESEEKBAR (SEEKBAR) CHANGED ~~
 		videosizeseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
