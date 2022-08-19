@@ -263,10 +263,9 @@ public class MainActivity extends AppCompatActivity {
         	TEMPLATEPAGE.setClass(getApplicationContext(), TemplateActivity.class);
         	TEMPLATEPAGE.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         	startActivity(TEMPLATEPAGE);
-         }
-
-
-	    
+        }
+         
+        imageview9.setTag("sound");
 		MediaController videoview1_controller = new MediaController(this);
 		videoview1.setMediaController(videoview1_controller);
 		addfile.setVisibility(View.VISIBLE);
@@ -600,7 +599,13 @@ public class MainActivity extends AppCompatActivity {
         soundbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imageview9.setImageResource(R.drawable.speakermuteicon);
+                if(imageview9.getTag() != null && imageview9.getTag().toString().equals("sound")) {
+                    imageview9.setImageResource(R.drawable.speakermuteicon); 
+                    imageview9.setTag("mute");
+                } else {
+                    imageview9.setImageResource(R.drawable.speakericon); 
+                    imageview9.setTag("sound");
+                }
             }
         });
 
