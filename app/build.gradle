@@ -12,8 +12,8 @@ android {
         applicationId rootProject.ext.appId
         minSdk rootProject.ext.minSdk
         targetSdk rootProject.ext.targetSdk
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
         ndk {
             abiFilters 'armeabi-v7a','arm64-v8a'
         }
@@ -23,19 +23,19 @@ android {
     
     signingConfigs {
          release {
+             storeFile file("EditLike.jks")
              keyAlias 'EditLike'
              keyPassword '##EditLike10102003'
              storePassword '##EditLike10102003'
-             storeFile file("/storage/emulated/0/AndroidIDEProjects/Edit Like/Keystore/EditLike.jks")
              v1SigningEnabled true
              v2SigningEnabled true
              enableV3Signing = true
          } 
          debug {
+             storeFile file("EditLike.jks")
              keyAlias 'EditLike'
              keyPassword '##EditLike10102003'
              storePassword '##EditLike10102003'
-             storeFile file("/storage/emulated/0/AndroidIDEProjects/Edit Like/Keystore/EditLike.jks")
              v1SigningEnabled true
              v2SigningEnabled true
              enableV3Signing = true
