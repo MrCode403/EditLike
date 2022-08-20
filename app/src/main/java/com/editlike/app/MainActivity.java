@@ -660,15 +660,16 @@ public class MainActivity extends AppCompatActivity {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-
-            if (imageview9.getTag() != null && imageview9.getTag().toString().equals("sound")) {
-              imageview9.setImageResource(R.drawable.speakermuteicon);
-              imageview9.setTag("mute");
-              mp.setVolume(0f, 0f);
-            } else {
-              imageview9.setImageResource(R.drawable.speakericon);
-              imageview9.setTag("sound");
-              mp.setVolume(1f, 1f);
+            if (mp != null) {
+              if (imageview9.getTag() != null && imageview9.getTag().toString().equals("sound")) {
+                imageview9.setImageResource(R.drawable.speakermuteicon);
+                imageview9.setTag("mute");
+                mp.setVolume(0f, 0f);
+              } else {
+                imageview9.setImageResource(R.drawable.speakericon);
+                imageview9.setTag("sound");
+                mp.setVolume(1f, 1f);
+              }
             }
           }
         });
@@ -732,11 +733,11 @@ public class MainActivity extends AppCompatActivity {
       }
     }
   }
-  
+
   @Override
   public void onPause() {
-      super.onPause();
-      videoview1.pause();
+    super.onPause();
+    videoview1.pause();
   }
 
   // ON BACK BUTTON PRESSED
