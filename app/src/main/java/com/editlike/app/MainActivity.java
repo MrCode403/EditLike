@@ -816,12 +816,16 @@ public class MainActivity extends AppCompatActivity {
 			expandfab.setTranslationY((float) (0));
 			savefab.setTranslationY((float) (0));
 			bottombackground.setVisibility(View.GONE);
-			BOTTOMBARLAYOUT = "";
+            if (BOTTOMBARLAYOUT.equals("BOTTOMBAR")) {
+                BOTTOMBARLAYOUT = "";
+            }
 		} else {
 			expandfab.setTranslationY((float) (-130));
 			savefab.setTranslationY((float) (-130));
 			bottombackground.setVisibility(View.VISIBLE);
-			BOTTOMBARLAYOUT = "BOTTOMBAR";
+            if (BOTTOMBARLAYOUT.equals("")) {
+                BOTTOMBARLAYOUT = "BOTTOMBAR";
+            }
 		}
 	}
 
