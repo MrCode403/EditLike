@@ -1,24 +1,31 @@
 package com.editlike.app;
 
 import android.Manifest;
+import android.app.*;
 import android.app.Activity;
+import android.content.*;
 import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.*;
+import android.graphics.*;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.media.MediaPlayer;
-import android.graphics.*;
 import android.graphics.drawable.*;
-import android.content.res.*;
+import android.media.*;
+import android.media.MediaPlayer;
 import android.net.Uri;
-import android.app.*;
-import android.content.*;
+import android.os.*;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.*;
+import android.text.style.*;
+import android.view.*;
 import android.view.View;
+import android.view.View.*;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -38,44 +45,16 @@ import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
+import com.unity3d.ads.UnityAds;
 import de.hdodenhof.circleimageview.*;
 import io.michaelrocks.paranoid.Obfuscate;
+import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.*;
+import android.util.AttributeSet;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
-import android.view.ViewGroup;
-import android.os.*;
-import android.animation.*;
-import android.app.*;
-import android.content.*;
-import android.content.res.*;
-import android.graphics.*;
-import android.graphics.drawable.*;
-import android.media.*;
-import android.net.*;
-import android.os.*;
-import android.text.*;
-import android.text.style.*;
-import android.util.*;
-import android.view.*;
-import android.view.View.*;
-import android.view.animation.*;
-import android.webkit.*;
-import android.widget.*;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.annotation.*;
-import org.json.*;
-import java.io.*;
-import java.text.*;
-import java.util.*;
-import java.util.regex.*;
-import com.unity3d.services.banners.IUnityBannerListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.services.banners.UnityBanners;
 
 @Obfuscate
 public class MainActivity extends AppCompatActivity {
@@ -267,18 +246,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageview9 = (ImageView) videosizeview.findViewById(R.id.imageview9);
 
     // EVERYTHING ON INITIALISE ~~
-    if (getIntent().hasExtra("TEMPLATE")) {
-      if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE1")) {
-        addbackgroundvideobutton.setVisibility(View.GONE);
-      } else {
-        addbackgroundvideobutton.setVisibility(View.VISIBLE);
-        container.setVisibility(View.GONE);
-      }
+    if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE1")) {
+      addbackgroundvideobutton.setVisibility(View.GONE);
     } else {
-      final Intent TEMPLATEPAGE = new Intent();
-      TEMPLATEPAGE.setClass(getApplicationContext(), TemplateActivity.class);
-      TEMPLATEPAGE.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-      startActivity(TEMPLATEPAGE);
+      addbackgroundvideobutton.setVisibility(View.VISIBLE);
+      container.setVisibility(View.GONE);
     }
 
     imageview9.setTag("sound");
