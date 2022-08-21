@@ -1,15 +1,19 @@
 package com.editlike.app;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.*;
 import android.os.Bundle;
+import android.Manifest;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import com.editlike.app.TemplateActivity;
 import com.editlike.app.databinding.TemplateBinding;
 import io.michaelrocks.paranoid.Obfuscate;
@@ -18,6 +22,8 @@ import io.michaelrocks.paranoid.Obfuscate;
 public class TemplateActivity extends AppCompatActivity {
 
   private TemplateBinding binding;
+  private boolean template1clicked = false;
+  private boolean template2clicked = false;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +35,16 @@ public class TemplateActivity extends AppCompatActivity {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+            template1clicked = true;
+            template2clicked = false;
+            Permission();
+            /*
             final Intent MainPage = new Intent();
             MainPage.setClass(getApplicationContext(), MainActivity.class);
             MainPage.putExtra("TEMPLATE", "TEMPLATE1");
             MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(MainPage);
+            */
           }
         });
 
@@ -41,11 +52,16 @@ public class TemplateActivity extends AppCompatActivity {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+            template2clicked = true;
+            template1clicked = false;
+            Permission();
+            /*
             final Intent MainPage = new Intent();
             MainPage.setClass(getApplicationContext(), MainActivity.class);
             MainPage.putExtra("TEMPLATE", "TEMPLATE2");
             MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(MainPage);
+            */
           }
         });
   }
@@ -68,6 +84,76 @@ public class TemplateActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     finishAffinity();
+  }
+
+  public void Permission() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      // IF ANDROID VERSION IS GREATER OR EQUAL TO ANDROID 9 (API 29) ~~
+      if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+          == PackageManager.PERMISSION_DENIED) {
+        if (template1clicked) {
+          final Intent PermissionPage = new Intent();
+          PermissionPage.setClass(getApplicationContext(), PermissionsActivity.class);
+          PermissionPage.putExtra("TEMPLATE", "TEMPLATE1");
+          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(PermissionPage);
+        } else if (template2clicked) {
+          final Intent PermissionPage = new Intent();
+          PermissionPage.setClass(getApplicationContext(), PermissionsActivity.class);
+          PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
+          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(PermissionPage);
+        }
+      } else {
+        if (template1clicked) {
+          final Intent MainPage = new Intent();
+          MainPage.setClass(getApplicationContext(), MainActivity.class);
+          MainPage.putExtra("TEMPLATE", "TEMPLATE1");
+          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(MainPage);
+        } else if (template2clicked) {
+          final Intent MainPage = new Intent();
+          MainPage.setClass(getApplicationContext(), MainActivity.class);
+          MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(MainPage);
+        }
+      }
+    } else {
+      // IF ANDROID VERSION IS LESS THAN ANDROID 9 (API 29) ~~
+      if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+              == PackageManager.PERMISSION_DENIED
+          || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+              == PackageManager.PERMISSION_DENIED) {
+        if (template1clicked) {
+          final Intent PermissionPage = new Intent();
+          PermissionPage.setClass(getApplicationContext(), MainActivity.class);
+          PermissionPage.putExtra("TEMPLATE", "TEMPLATE1");
+          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(PermissionPage);
+        } else if (template2clicked) {
+          final Intent PermissionPage = new Intent();
+          PermissionPage.setClass(getApplicationContext(), MainActivity.class);
+          PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
+          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(PermissionPage);
+        }
+      } else {
+        if (template1clicked) {
+          final Intent MainPage = new Intent();
+          MainPage.setClass(getApplicationContext(), MainActivity.class);
+          MainPage.putExtra("TEMPLATE", "TEMPLATE1");
+          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(MainPage);
+        } else if (template2clicked) {
+          final Intent MainPage = new Intent();
+          MainPage.setClass(getApplicationContext(), MainActivity.class);
+          MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+          startActivity(MainPage);
+        }
+      }
+    }
   }
 }
 

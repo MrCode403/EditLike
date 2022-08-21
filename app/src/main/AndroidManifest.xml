@@ -38,6 +38,11 @@
             android:supportsPictureInPicture="true"
             android:windowSoftInputMode="stateHidden" />
         <activity
+            android:name=".PermissionsActivity"
+            android:screenOrientation="portrait"
+            android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
     </application>
