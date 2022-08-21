@@ -38,6 +38,7 @@ import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import com.editlike.app.databinding.ActivityMainBinding;
 import com.flask.colorpicker.*;
 import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
@@ -59,9 +60,6 @@ import java.util.TimerTask;
 @Obfuscate
 public class MainActivity extends AppCompatActivity {
 
-  private RelativeLayout viewcontainer;
-  private LinearLayout background;
-  private LinearLayout bottombackground;
   private LinearLayout toolbar;
   private EditText description;
   private LinearLayout container;
@@ -78,28 +76,9 @@ public class MainActivity extends AppCompatActivity {
   private TextView textview7;
   private TextView date;
   private TextView textview6;
-  private LinearLayout bottommainbar;
-  private LinearLayout bottombar;
-  private LinearLayout toolbarbutton;
-  private LinearLayout statusbarbutton;
-  private LinearLayout backgroundbutton;
-  private LinearLayout descriptionbutton;
-  private LinearLayout videobutton;
-  private ImageView imageview6;
-  private TextView textview8;
-  private ImageView imageview7;
-  private TextView textview9;
-  private ImageView imageview10;
-  private TextView textview12;
-  private ImageView imageview9;
-  private TextView textview11;
-  private ImageView imageview8;
-  private TextView textview10;
   private RelativeLayout ground;
   private LinearLayout backgroundvideoview;
 
-  private FloatingActionButton savefab;
-  private FloatingActionButton expandfab;
   private LinearLayout toolbarview;
   private LinearLayout statusbarview;
   private LinearLayout backgroundview;
@@ -108,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
   private TrimTimelineView TrimView;
   private LinearLayout backgroundlayout;
   private VideoView vidview;
+
+  private ActivityMainBinding mainbinding;
 
   private Timer timer1 = new Timer();
   private TimerTask settimer1;
@@ -139,38 +120,47 @@ public class MainActivity extends AppCompatActivity {
     /* APP LOGS GENERATOR (com.itsaky.androidide.logsender.LogSender) */
 
     /* SET XML LAYOUT - activity_main.xml (res/layout) */
-    setContentView(R.layout.activity_main);
+    mainbinding = ActivityMainBinding.inflate(getLayoutInflater());
+    setContentView(mainbinding.getRoot());
 
     /* SET XML LAYOUT INFLATOR - toolbarview.xml (res/layout) */
     toolbarview =
-        (LinearLayout) this.getLayoutInflater().inflate(R.layout.toolbarview, bottommainbar, false);
+        (LinearLayout)
+            this.getLayoutInflater()
+                .inflate(R.layout.toolbarview, mainbinding.bottommainbar, false);
 
     /* SET XML LAYOUT INFLATOR - statusbarview.xml (res/layout) */
     statusbarview =
         (LinearLayout)
-            this.getLayoutInflater().inflate(R.layout.statusbarview, bottommainbar, false);
+            this.getLayoutInflater()
+                .inflate(R.layout.statusbarview, mainbinding.bottommainbar, false);
 
     /* SET XML LAYOUT INFLATOR - backgroundview.xml (res/layout) */
     backgroundview =
         (LinearLayout)
-            this.getLayoutInflater().inflate(R.layout.backgroundview, bottommainbar, false);
+            this.getLayoutInflater()
+                .inflate(R.layout.backgroundview, mainbinding.bottommainbar, false);
 
     /* SET XML LAYOUT INFLATOR - descriptionview.xml (res/layout) */
     descriptionview =
         (LinearLayout)
-            this.getLayoutInflater().inflate(R.layout.descriptionview, bottommainbar, false);
+            this.getLayoutInflater()
+                .inflate(R.layout.descriptionview, mainbinding.bottommainbar, false);
 
     /* SET XML LAYOUT INFLATOR - videosizeview.xml (res/layout) */
     videosizeview =
         (LinearLayout)
-            this.getLayoutInflater().inflate(R.layout.videosizeview, bottommainbar, false);
+            this.getLayoutInflater()
+                .inflate(R.layout.videosizeview, mainbinding.bottommainbar, false);
 
     /**/
     backgroundlayout =
         (LinearLayout)
-            this.getLayoutInflater().inflate(R.layout.backgroundlayout, background, false);
+            this.getLayoutInflater()
+                .inflate(R.layout.backgroundlayout, mainbinding.background, false);
 
     // FIND VIEWS BY ID FROM XML LAYOUT - activity_main.xml (res/layout) ~~
+    /*
     savefab = findViewById(R.id.savefab);
     expandfab = findViewById(R.id.expandfab);
     viewcontainer = findViewById(R.id.viewcontainer);
@@ -193,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
     textview11 = findViewById(R.id.textview11);
     imageview8 = findViewById(R.id.imageview8);
     textview10 = findViewById(R.id.textview10);
+    */
 
     toolbar = (LinearLayout) backgroundlayout.findViewById(R.id.toolbar);
     description = (EditText) backgroundlayout.findViewById(R.id.description);
@@ -259,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
     addfile.setVisibility(View.VISIBLE);
     videoview1.setVisibility(View.GONE);
     videoview1.setMediaController(null);
-    bottombackground.setVisibility(View.GONE);
+    mainbinding.bottombackground.setVisibility(View.GONE);
     linear0.setVisibility(View.VISIBLE);
     trimbarbackground.setVisibility(View.GONE);
     videosizebackground.setVisibility(View.GONE);
@@ -268,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
         .setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
     videosizeseekbar.getThumb().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
 
-    background.addView(backgroundlayout);
+    mainbinding.background.addView(backgroundlayout);
 
     UnityAds.initialize(this, GameID, false);
 
@@ -306,22 +297,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
     // SAVEFAB (FABVIEW) ON CLICKED ~~
-    savefab.setOnClickListener(
+    mainbinding.savefab.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            if (bottombackground.getVisibility() == View.VISIBLE) {
+            if (mainbinding.bottombackground.getVisibility() == View.VISIBLE) {
               FABTRANSITION();
             }
             final double videopositionY = container.getTop();
             final double videoscalex = videoview1.getWidth();
             final double videoscaley = videoview1.getHeight();
-            final double backgroundheight = background.getWidth();
-            final double backgroundwidth = background.getHeight();
+            final double backgroundheight = mainbinding.background.getWidth();
+            final double backgroundwidth = mainbinding.background.getHeight();
             if (!(videopath.length() == 0)) {
               FileUtil.deleteFile("/storage/emulated/0/DCIM/save.png");
               videoview1.setBackgroundColor(0xFFFFFFFF);
-              viewToImage(background, "/storage/emulated/0/DCIM/save.png");
+              viewToImage(mainbinding.background, "/storage/emulated/0/DCIM/save.png");
               Intent EXPORTPAGE = new Intent();
               EXPORTPAGE.setClass(getApplicationContext(), ExportActivity.class);
               EXPORTPAGE.putExtra("VIDEOPATH", videopath);
@@ -430,7 +421,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     // EXPANDFAB (FABVIEW) ON CLICKED ~~
-    expandfab.setOnClickListener(
+    mainbinding.expandfab.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
@@ -439,56 +430,56 @@ public class MainActivity extends AppCompatActivity {
         });
 
     // TOOLBAR (LINEARLAYOUT) ON CLICKED ~~
-    toolbarbutton.setOnClickListener(
+    mainbinding.toolbarbutton.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            bottommainbar.removeView(bottombar);
-            bottommainbar.addView(toolbarview);
+            mainbinding.bottommainbar.removeView(mainbinding.bottombar);
+            mainbinding.bottommainbar.addView(toolbarview);
             BOTTOMBARLAYOUT = "TOOLBAR";
           }
         });
 
     // STATUSBAR BUTTON (LINEARLAYOUT) ON CLICKED ~~
-    statusbarbutton.setOnClickListener(
+    mainbinding.statusbarbutton.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            bottommainbar.removeView(bottombar);
-            bottommainbar.addView(statusbarview);
+            mainbinding.bottommainbar.removeView(mainbinding.bottombar);
+            mainbinding.bottommainbar.addView(statusbarview);
             BOTTOMBARLAYOUT = "STATUSBAR";
           }
         });
 
     // BACKGROUND BUTTON (LINEARLAYOUT) ON CLICKED ~~
-    backgroundbutton.setOnClickListener(
+    mainbinding.backgroundbutton.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            bottommainbar.removeView(bottombar);
-            bottommainbar.addView(backgroundview);
+            mainbinding.bottommainbar.removeView(mainbinding.bottombar);
+            mainbinding.bottommainbar.addView(backgroundview);
             BOTTOMBARLAYOUT = "BACKGROUND";
           }
         });
 
     // DESCRIPTION BUTTON (LINEARLAYOUT) ON CLICKED ~~
-    descriptionbutton.setOnClickListener(
+    mainbinding.descriptionbutton.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            bottommainbar.removeView(bottombar);
-            bottommainbar.addView(descriptionview);
+            mainbinding.bottommainbar.removeView(mainbinding.bottombar);
+            mainbinding.bottommainbar.addView(descriptionview);
             BOTTOMBARLAYOUT = "DESCRIPTION";
           }
         });
 
     // VIDEOSIZE BUTTON (LINEARLAYOUT) ON CLICKED ~~
-    videobutton.setOnClickListener(
+    mainbinding.videobutton.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            bottommainbar.removeView(bottombar);
-            bottommainbar.addView(videosizeview);
+            mainbinding.bottommainbar.removeView(mainbinding.bottombar);
+            mainbinding.bottommainbar.addView(videosizeview);
             BOTTOMBARLAYOUT = "VIDEO";
           }
         });
@@ -720,23 +711,23 @@ public class MainActivity extends AppCompatActivity {
         FABTRANSITION();
         break;
       case "TOOLBAR":
-        bottommainbar.removeAllViews();
-        bottommainbar.addView(bottombar);
+        mainbinding.bottommainbar.removeAllViews();
+        mainbinding.bottommainbar.addView(mainbinding.bottombar);
         BOTTOMBARLAYOUT = "BOTTOMBAR";
         break;
       case "STATUSBAR":
-        bottommainbar.removeAllViews();
-        bottommainbar.addView(bottombar);
+        mainbinding.bottommainbar.removeAllViews();
+        mainbinding.bottommainbar.addView(mainbinding.bottombar);
         BOTTOMBARLAYOUT = "BOTTOMBAR";
         break;
       case "BACKGROUND":
-        bottommainbar.removeAllViews();
-        bottommainbar.addView(bottombar);
+        mainbinding.bottommainbar.removeAllViews();
+        mainbinding.bottommainbar.addView(mainbinding.bottombar);
         BOTTOMBARLAYOUT = "BOTTOMBAR";
         break;
       case "DESCRIPTION":
-        bottommainbar.removeAllViews();
-        bottommainbar.addView(bottombar);
+        mainbinding.bottommainbar.removeAllViews();
+        mainbinding.bottommainbar.addView(mainbinding.bottombar);
         BOTTOMBARLAYOUT = "BOTTOMBAR";
         break;
       case "VIDEO":
@@ -746,8 +737,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout videosizebackground =
             (LinearLayout) videosizeview.findViewById(R.id.videosizebackground);
         if (linear0.getVisibility() == View.VISIBLE) {
-          bottommainbar.removeAllViews();
-          bottommainbar.addView(bottombar);
+          mainbinding.bottommainbar.removeAllViews();
+          mainbinding.bottommainbar.addView(mainbinding.bottombar);
           BOTTOMBARLAYOUT = "BOTTOMBAR";
         } else {
           linear0.setVisibility(View.VISIBLE);
@@ -863,17 +854,17 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void FABTRANSITION() {
-    if (bottombackground.getVisibility() == View.VISIBLE) {
-      expandfab.setTranslationY((float) (0));
-      savefab.setTranslationY((float) (0));
-      bottombackground.setVisibility(View.GONE);
+    if (mainbinding.bottombackground.getVisibility() == View.VISIBLE) {
+      mainbinding.expandfab.setTranslationY((float) (0));
+      mainbinding.savefab.setTranslationY((float) (0));
+      mainbinding.bottombackground.setVisibility(View.GONE);
       if (BOTTOMBARLAYOUT.equals("BOTTOMBAR")) {
         BOTTOMBARLAYOUT = "";
       }
     } else {
-      expandfab.setTranslationY((float) (-130));
-      savefab.setTranslationY((float) (-130));
-      bottombackground.setVisibility(View.VISIBLE);
+      mainbinding.expandfab.setTranslationY((float) (-130));
+      mainbinding.savefab.setTranslationY((float) (-130));
+      mainbinding.bottombackground.setVisibility(View.VISIBLE);
       if (BOTTOMBARLAYOUT.equals("")) {
         BOTTOMBARLAYOUT = "BOTTOMBAR";
       }

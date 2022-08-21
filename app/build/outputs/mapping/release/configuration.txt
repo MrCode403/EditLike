@@ -1,4 +1,4 @@
-# The proguard configuration file for the following section is /storage/emulated/0/AndroidIDEProjects/Edit Like/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-7.2.0
+# The proguard configuration file for the following section is /storage/emulated/0/AndroidIDEProjects/EditLike/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-7.2.0
 # This is a configuration file for ProGuard.
 # http://proguard.sourceforge.net/index.html#manual/usage.html
 #
@@ -117,8 +117,8 @@
 # These classes are duplicated between android.jar and core-lambda-stubs.jar.
 -dontnote java.lang.invoke.**
 
-# End of content from /storage/emulated/0/AndroidIDEProjects/Edit Like/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-7.2.0
-# The proguard configuration file for the following section is /storage/emulated/0/AndroidIDEProjects/Edit Like/app/proguard-rules.pro
+# End of content from /storage/emulated/0/AndroidIDEProjects/EditLike/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-7.2.0
+# The proguard configuration file for the following section is /storage/emulated/0/AndroidIDEProjects/EditLike/app/proguard-rules.pro
 -optimizationpasses 5
 -repackageclasses
 -ignorewarnings
@@ -128,8 +128,8 @@
 -allowaccessmodification
 -useuniqueclassmembernames
 -keeppackagenames doNotKeepAThing
-# End of content from /storage/emulated/0/AndroidIDEProjects/Edit Like/app/proguard-rules.pro
-# The proguard configuration file for the following section is /storage/emulated/0/AndroidIDEProjects/Edit Like/app/build/intermediates/aapt_proguard_file/release/aapt_rules.txt
+# End of content from /storage/emulated/0/AndroidIDEProjects/EditLike/app/proguard-rules.pro
+# The proguard configuration file for the following section is /storage/emulated/0/AndroidIDEProjects/EditLike/app/build/intermediates/aapt_proguard_file/release/aapt_rules.txt
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class androidx.startup.InitializationProvider { <init>(); }
 -keep class com.editlike.app.ExportActivity { <init>(); }
@@ -241,7 +241,7 @@
 -keep class de.hdodenhof.circleimageview.CircleImageView { <init>(android.content.Context, android.util.AttributeSet); }
 
 
-# End of content from /storage/emulated/0/AndroidIDEProjects/Edit Like/app/build/intermediates/aapt_proguard_file/release/aapt_rules.txt
+# End of content from /storage/emulated/0/AndroidIDEProjects/EditLike/app/build/intermediates/aapt_proguard_file/release/aapt_rules.txt
 # The proguard configuration file for the following section is /data/data/com.itsaky.androidide/files/home/.gradle/caches/transforms-3/757b577506b6815e9565263ec31445b9/transformed/unity-ads/proguard.txt
 # Keep filenames and line numbers for stack traces
 -keepattributes SourceFile,LineNumberTable

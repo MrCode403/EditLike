@@ -10354,6 +10354,11 @@ androidx.versionedparcelable.VersionedParcelStream$1
 androidx.versionedparcelable.VersionedParcelStream$FieldBuffer
 androidx.versionedparcelable.VersionedParcelStream
 androidx.versionedparcelable.VersionedParcelize
+androidx.viewbinding.BuildConfig
+androidx.viewbinding.R
+androidx.viewbinding.ViewBinding
+androidx.viewbinding.ViewBindings:
+    private void <init>()
 androidx.viewpager.R$attr
 androidx.viewpager.R$color
 androidx.viewpager.R$dimen
@@ -10781,9 +10786,18 @@ com.editlike.app.R$raw
 com.editlike.app.R$string
 com.editlike.app.R$style
 com.editlike.app.R
-com.editlike.app.TemplateActivity:
-    private android.widget.Button template1button
 com.editlike.app.Util
+com.editlike.app.databinding.ActivityMainBinding
+com.editlike.app.databinding.BackgroundlayoutBinding
+com.editlike.app.databinding.BackgroundviewBinding
+com.editlike.app.databinding.DescriptionviewBinding
+com.editlike.app.databinding.ExportBinding:
+    public synthetic bridge android.view.View getRoot()
+com.editlike.app.databinding.StatusbarviewBinding
+com.editlike.app.databinding.TemplateBinding:
+    public synthetic bridge android.view.View getRoot()
+com.editlike.app.databinding.ToolbarviewBinding
+com.editlike.app.databinding.VideosizeviewBinding
 com.flask.colorpicker.BuildConfig
 com.flask.colorpicker.ColorPickerPreference$1
 com.flask.colorpicker.ColorPickerPreference
@@ -18393,10 +18407,9 @@ com.google.android.material.transition.platform.TransitionUtils$CornerSizeBinary
 com.google.android.material.transition.platform.TransitionUtils
 com.google.android.material.transition.platform.VisibilityAnimatorProvider
 com.google.common.util.concurrent.ListenableFuture
-com.itsaky.androidide.logsender.LogSender:
-    private static final java.lang.String APPEND_LOG
-    private static final java.lang.String EXTRA_LINE
-    private static final java.lang.String PACKAGE_NAME
+com.itsaky.androidide.logsender.LogSender$1
+com.itsaky.androidide.logsender.LogSender$Callback
+com.itsaky.androidide.logsender.LogSender
 com.theartofdev.edmodo.cropper.BitmapCroppingWorkerTask:
     public android.net.Uri getUri()
 com.theartofdev.edmodo.cropper.BitmapUtils:
@@ -19221,86 +19234,10 @@ androidx.activity.result.contract.ActivityResultContracts$StartActivityForResult
     public final androidx.activity.result.ActivityResult parseResult(int,android.content.Intent)
 androidx.appcompat.R$attr
 androidx.appcompat.R$bool:
-    public static final int Widget_Support_CoordinatorLayout
-    public static final int abc_action_bar_embed_tabs
-    public static final int abc_vector_test
-    public static final int action_bar
-    public static final int action_bar_activity_content
-    public static final int action_bar_container
-    public static final int action_bar_subtitle
-    public static final int action_bar_title
-    public static final int action_context_bar
-    public static final int action_menu_presenter
-    public static final int action_mode_bar_stub
-    public static final int action_mode_close_button
-    public static final int alertTitle
-    public static final int app_bar_elevation_anim_duration
-    public static final int buttonPanel
-    public static final int content
-    public static final int contentPanel
-    public static final int crop_image_activity_no_permissions
-    public static final int crop_image_activity_title
-    public static final int custom
-    public static final int customPanel
-    public static final int decor_content_parent
-    public static final int default_margin_top
-    public static final int default_slider_bar_height
-    public static final int default_slider_handler_radius
-    public static final int default_slider_height
-    public static final int default_slider_margin
-    public static final int design_error
-    public static final int design_fab_stroke_end_inner_color
-    public static final int design_fab_stroke_end_outer_color
-    public static final int design_fab_stroke_top_inner_color
-    public static final int design_fab_stroke_top_outer_color
-    public static final int edit_query
-    public static final int group_divider
-    public static final int material_motion_duration_long_1
-    public static final int material_timepicker_clockface
-    public static final int message
-    public static final int mtrl_calendar_year_selector_span
-    public static final int mtrl_filled_background_color
-    public static final int mtrl_textinput_default_box_stroke_color
-    public static final int mtrl_textinput_disabled_color
-    public static final int mtrl_textinput_hovered_box_stroke_color
-    public static final int parentPanel
-    public static final int pick_image_intent_chooser_title
-    public static final int scrollIndicatorDown
-    public static final int scrollIndicatorUp
-    public static final int scrollView
-    public static final int search_button
-    public static final int search_close_btn
-    public static final int search_edit_frame
-    public static final int search_go_btn
-    public static final int search_mag_icon
-    public static final int search_plate
-    public static final int search_src_text
-    public static final int search_voice_btn
-    public static final int shortcut
-    public static final int spacer
-    public static final int split_action_bar
-    public static final int submenuarrow
-    public static final int submit_area
-    public static final int textSpacerNoButtons
-    public static final int textSpacerNoTitle
-    public static final int title
-    public static final int titleDividerNoCustom
-    public static final int title_template
-    public static final int topPanel
-    public static final int view_tree_saved_state_registry_owner
-androidx.appcompat.R$color$$IA$1
-androidx.appcompat.R$color$$IA$2
-androidx.appcompat.R$color$$IA$3
-androidx.appcompat.R$color:
-    public static final int Animation_AppCompat_Tooltip
-    public static final int CardView
     public static final int CropOverlayView
     public static final int CropProgressBar
     public static final int ImageView_image
     public static final int TextAppearance_AppCompat_Caption
-    public static final int Theme_AppCompat_CompactMenu
-    public static final int Theme_AppCompat_Empty
-    public static final int Theme_AppCompat_Light
     public static final int Widget_AppCompat_AutoCompleteTextView
     public static final int Widget_Design_AppBarLayout
     public static final int Widget_Design_BottomSheet_Modal
@@ -19319,6 +19256,266 @@ androidx.appcompat.R$color:
     public static final int Widget_MaterialComponents_MaterialCalendar
     public static final int Widget_MaterialComponents_TimePicker_Clock
     public static final int Widget_MaterialComponents_Toolbar
+    public static final int Widget_Support_CoordinatorLayout
+    public static com.unity3d.services.core.configuration.Configuration a
+    public static final int abc_action_bar_embed_tabs
+    public static final int abc_action_bar_stacked_max_height
+    public static final int abc_action_bar_stacked_tab_max_width
+    public static final int abc_action_bar_up_description
+    public static final int abc_cascading_menus_min_smallest_width
+    public static final int abc_config_prefDialogWidth
+    public static final int abc_dropdownitem_icon_width
+    public static final int abc_dropdownitem_text_padding_left
+    public static final int abc_menu_alt_shortcut_label
+    public static final int abc_menu_ctrl_shortcut_label
+    public static final int abc_menu_delete_shortcut_label
+    public static final int abc_menu_enter_shortcut_label
+    public static final int abc_menu_function_shortcut_label
+    public static final int abc_menu_meta_shortcut_label
+    public static final int abc_menu_shift_shortcut_label
+    public static final int abc_menu_space_shortcut_label
+    public static final int abc_menu_sym_shortcut_label
+    public static final int abc_prepend_shortcut_label
+    public static final int abc_search_view_preferred_height
+    public static final int abc_search_view_preferred_width
+    public static final int abc_searchview_description_search
+    public static final int abc_star_big
+    public static final int abc_star_medium
+    public static final int abc_star_small
+    public static final int abc_vector_test
+    public static final int accessibility_action_clickable_span
+    public static final int accessibility_custom_action_0
+    public static final int accessibility_custom_action_1
+    public static final int accessibility_custom_action_10
+    public static final int accessibility_custom_action_11
+    public static final int accessibility_custom_action_12
+    public static final int accessibility_custom_action_13
+    public static final int accessibility_custom_action_14
+    public static final int accessibility_custom_action_15
+    public static final int accessibility_custom_action_16
+    public static final int accessibility_custom_action_17
+    public static final int accessibility_custom_action_18
+    public static final int accessibility_custom_action_19
+    public static final int accessibility_custom_action_2
+    public static final int accessibility_custom_action_20
+    public static final int accessibility_custom_action_21
+    public static final int accessibility_custom_action_22
+    public static final int accessibility_custom_action_23
+    public static final int accessibility_custom_action_24
+    public static final int accessibility_custom_action_25
+    public static final int accessibility_custom_action_26
+    public static final int accessibility_custom_action_27
+    public static final int accessibility_custom_action_28
+    public static final int accessibility_custom_action_29
+    public static final int accessibility_custom_action_3
+    public static final int accessibility_custom_action_30
+    public static final int accessibility_custom_action_31
+    public static final int accessibility_custom_action_4
+    public static final int accessibility_custom_action_5
+    public static final int accessibility_custom_action_6
+    public static final int accessibility_custom_action_7
+    public static final int accessibility_custom_action_8
+    public static final int accessibility_custom_action_9
+    public static final int action_bar
+    public static final int action_bar_activity_content
+    public static final int action_bar_container
+    public static final int action_bar_subtitle
+    public static final int action_bar_title
+    public static final int action_context_bar
+    public static final int action_menu_presenter
+    public static final int action_mode_bar_stub
+    public static final int action_mode_close_button
+    public static final int alertTitle
+    public static final int androidx_startup
+    public static final int buttonPanel
+    public static final int cancel_button
+    public static final int cardview_compat_inset_shadow
+    public static final int circle_center
+    public static final int confirm_button
+    public static final int content
+    public static final int contentPanel
+    public static final int cropImageView
+    public static final int crop_image_menu
+    public static final int crop_image_menu_crop
+    public static final int crop_image_menu_flip
+    public static final int crop_image_menu_flip_horizontally
+    public static final int crop_image_menu_flip_vertically
+    public static final int crop_image_menu_rotate_left
+    public static final int crop_image_menu_rotate_right
+    public static final int custom
+    public static final int customPanel
+    public static final int decor_content_parent
+    public static final int design_appbar_elevation
+    public static final int design_bottom_sheet_peek_height_min
+    public static final int design_fab_size_mini
+    public static final int design_fab_size_normal
+    public static final int design_menu_item_action_area_stub
+    public static final int design_menu_item_text
+    public static final int design_navigation_icon_size
+    public static final int design_navigation_menu_item
+    public static final int design_snackbar_padding_vertical
+    public static final int design_snackbar_padding_vertical_2lines
+    public static final int design_text_input_end_icon
+    public static final int design_text_input_start_icon
+    public static final int design_textinput_caption_translate_y
+    public static final int edit_query
+    public static final int fragment_container_view_tag
+    public static final int fullscreen_header
+    public static final int group_divider
+    public static final int image_preview
+    public static final int material_clock_display
+    public static final int material_clock_face
+    public static final int material_clock_hand
+    public static final int material_clock_hand_center_dot_radius
+    public static final int material_clock_hand_padding
+    public static final int material_clock_hand_stroke_width
+    public static final int material_clock_period_pm_button
+    public static final int material_clock_period_toggle
+    public static final int material_clock_size
+    public static final int material_clockface_textview
+    public static final int material_clockface_view
+    public static final int material_filled_edittext_font_1_3_padding_bottom
+    public static final int material_filled_edittext_font_1_3_padding_top
+    public static final int material_filled_edittext_font_2_0_padding_bottom
+    public static final int material_filled_edittext_font_2_0_padding_top
+    public static final int material_font_1_3_box_collapsed_padding_top
+    public static final int material_font_2_0_box_collapsed_padding_top
+    public static final int material_helper_text_default_padding_top
+    public static final int material_helper_text_font_1_3_padding_horizontal
+    public static final int material_helper_text_font_1_3_padding_top
+    public static final int material_hour_tv
+    public static final int material_input_text_to_prefix_suffix_padding
+    public static final int material_label
+    public static final int material_minute_tv
+    public static final int material_radial_view_group
+    public static final int material_time_chip
+    public static final int material_time_input
+    public static final int material_time_picker_minimum_screen_height
+    public static final int material_time_picker_minimum_screen_width
+    public static final int material_timepicker
+    public static final int material_value_index
+    public static final int message
+    public static final int month_grid
+    public static final int month_navigation_fragment_toggle
+    public static final int month_navigation_next
+    public static final int month_navigation_previous
+    public static final int month_title
+    public static final int mtrl_auto_complete_simple_item
+    public static final int mtrl_bottomappbar_fab_bottom_margin
+    public static final int mtrl_calendar_bottom_padding
+    public static final int mtrl_calendar_content_padding
+    public static final int mtrl_calendar_day
+    public static final int mtrl_calendar_day_height
+    public static final int mtrl_calendar_day_of_week
+    public static final int mtrl_calendar_day_selector_frame
+    public static final int mtrl_calendar_day_width
+    public static final int mtrl_calendar_days_of_week
+    public static final int mtrl_calendar_days_of_week_height
+    public static final int mtrl_calendar_dialog_background_inset
+    public static final int mtrl_calendar_frame
+    public static final int mtrl_calendar_horizontal
+    public static final int mtrl_calendar_main_pane
+    public static final int mtrl_calendar_month_horizontal_padding
+    public static final int mtrl_calendar_month_labeled
+    public static final int mtrl_calendar_month_vertical_padding
+    public static final int mtrl_calendar_months
+    public static final int mtrl_calendar_navigation_bottom_padding
+    public static final int mtrl_calendar_navigation_height
+    public static final int mtrl_calendar_navigation_top_padding
+    public static final int mtrl_calendar_vertical
+    public static final int mtrl_calendar_year
+    public static final int mtrl_calendar_year_selector_frame
+    public static final int mtrl_child_content_container
+    public static final int mtrl_exposed_dropdown_menu_popup_elevation
+    public static final int mtrl_exposed_dropdown_menu_popup_vertical_padding
+    public static final int mtrl_fab_hide_motion_spec
+    public static final int mtrl_fab_min_touch_target
+    public static final int mtrl_fab_show_motion_spec
+    public static final int mtrl_fab_transformation_sheet_collapse_spec
+    public static final int mtrl_fab_transformation_sheet_expand_spec
+    public static final int mtrl_internal_children_alpha_tag
+    public static final int mtrl_min_touch_target_size
+    public static final int mtrl_picker_dialog
+    public static final int mtrl_picker_fullscreen
+    public static final int mtrl_picker_header_selection_text
+    public static final int mtrl_picker_header_toggle
+    public static final int mtrl_picker_title_text
+    public static final int mtrl_shape_corner_size_small_component
+    public static final int mtrl_snackbar_background_corner_radius
+    public static final int mtrl_textinput_box_label_cutout_padding
+    public static final int mtrl_textinput_box_stroke_width_default
+    public static final int mtrl_textinput_box_stroke_width_focused
+    public static final int mtrl_textinput_counter_margin_start
+    public static final int parentPanel
+    public static final int row_index_key
+    public static final int scrollIndicatorDown
+    public static final int scrollIndicatorUp
+    public static final int scrollView
+    public static final int search_button
+    public static final int search_close_btn
+    public static final int search_edit_frame
+    public static final int search_go_btn
+    public static final int search_mag_icon
+    public static final int search_plate
+    public static final int search_src_text
+    public static final int search_voice_btn
+    public static final int selection_type
+    public static final int shortcut
+    public static final int snackbar_action
+    public static final int snackbar_text
+    public static final int spacer
+    public static final int special_effects_controller_view_tag
+    public static final int split_action_bar
+    public static final int submenuarrow
+    public static final int submit_area
+    public static final int tag_accessibility_actions
+    public static final int tag_accessibility_clickable_spans
+    public static final int tag_accessibility_heading
+    public static final int tag_accessibility_pane_title
+    public static final int tag_on_apply_window_listener
+    public static final int tag_on_receive_content_listener
+    public static final int tag_on_receive_content_mime_types
+    public static final int tag_screen_reader_focusable
+    public static final int tag_state_description
+    public static final int tag_transition_group
+    public static final int tag_unhandled_key_event_manager
+    public static final int tag_unhandled_key_listeners
+    public static final int tag_window_insets_animation_callback
+    public static final int textSpacerNoButtons
+    public static final int textSpacerNoTitle
+    public static final int text_input_error_icon
+    public static final int textinput_counter
+    public static final int textinput_error
+    public static final int textinput_helper_text
+    public static final int textinput_placeholder
+    public static final int textinput_prefix_text
+    public static final int textinput_suffix_text
+    public static final int title
+    public static final int titleDividerNoCustom
+    public static final int title_template
+    public static final int tooltip_precise_anchor_extra_offset
+    public static final int tooltip_precise_anchor_threshold
+    public static final int tooltip_y_offset_non_touch
+    public static final int tooltip_y_offset_touch
+    public static final int topPanel
+    public static final int view_tree_saved_state_registry_owner
+    public static final int view_tree_view_model_store_owner
+    public static final int visible_removing_fragment_view_tag
+    public static void a(com.unity3d.services.core.configuration.Configuration)
+    public static int colorAtLightness(int,float)
+    public static int compositeARGBWithAlpha(int,int)
+    public static androidx.constraintlayout.widget.R$id createDefaultCornerTreatment()
+    public static com.google.android.material.shape.EdgeTreatment createDefaultEdgeTreatment()
+    public static float getAlphaPercent(int)
+    public static int layer(int,int)
+    public static void setElevation(android.view.View,float)
+    public static void setParentAbsoluteElevation(android.view.View)
+androidx.appcompat.R$color:
+    public static final int Animation_AppCompat_Tooltip
+    public static final int CardView
+    public static final int Theme_AppCompat_CompactMenu
+    public static final int Theme_AppCompat_Empty
+    public static final int Theme_AppCompat_Light
     public static final int abc_ab_share_pack_mtrl_alpha
     public static final int abc_action_bar_title_item
     public static final int abc_action_menu_item_layout
@@ -19391,34 +19588,36 @@ androidx.appcompat.R$color:
     public static final int abc_tint_spinner
     public static final int abc_tint_switch_track
     public static final int abc_tooltip
-    public static final int cancel_button
+    public static final int app_bar_elevation_anim_duration
+    public static final int bottomsheet_action_expand_halfway
     public static final int cardview_dark_background
     public static final int cardview_light_background
     public static final int cardview_shadow_end_color
     public static final int cardview_shadow_start_color
-    public static final int circle_center
-    public static final int confirm_button
-    public static final int cropImageView
-    public static final int crop_image_menu
-    public static final int crop_image_menu_crop
-    public static final int crop_image_menu_flip
-    public static final int crop_image_menu_flip_horizontally
-    public static final int crop_image_menu_flip_vertically
-    public static final int crop_image_menu_rotate_left
-    public static final int crop_image_menu_rotate_right
-    public static final int design_appbar_elevation
-    public static final int design_bottom_sheet_peek_height_min
-    public static final int design_fab_size_mini
-    public static final int design_fab_size_normal
-    public static final int design_menu_item_action_area_stub
-    public static final int design_menu_item_text
-    public static final int design_navigation_icon_size
-    public static final int design_navigation_menu_item
-    public static final int design_snackbar_padding_vertical
-    public static final int design_snackbar_padding_vertical_2lines
-    public static final int design_text_input_end_icon
-    public static final int design_text_input_start_icon
-    public static final int design_textinput_caption_translate_y
+    public static final int character_counter_content_description
+    public static final int character_counter_overflowed_content_description
+    public static final int character_counter_pattern
+    public static final int clear_text_end_icon_content_description
+    public static final int color_edit
+    public static final int color_preview
+    public static final int color_selector
+    public static final int crop_image_activity
+    public static final int crop_image_activity_no_permissions
+    public static final int crop_image_activity_title
+    public static final int crop_image_view
+    public static final int default_margin_top
+    public static final int default_slider_bar_height
+    public static final int default_slider_handler_radius
+    public static final int default_slider_height
+    public static final int default_slider_margin
+    public static final int design_error
+    public static final int design_fab_stroke_end_inner_color
+    public static final int design_fab_stroke_end_outer_color
+    public static final int design_fab_stroke_top_inner_color
+    public static final int design_fab_stroke_top_outer_color
+    public static final int design_password_eye
+    public static final int error_icon_content_description
+    public static final int exposed_dropdown_menu_content_description
     public static final int fastscroll_default_thickness
     public static final int fastscroll_margin
     public static final int fastscroll_minimum_range
@@ -19428,196 +19627,14 @@ androidx.appcompat.R$color:
     public static final int fragment_fade_exit
     public static final int fragment_open_enter
     public static final int fragment_open_exit
-    public static final int fullscreen_header
-    public static final int image_preview
-    public static final int material_clock_display
-    public static final int material_clock_face
-    public static final int material_clock_hand
-    public static final int material_clock_hand_center_dot_radius
-    public static final int material_clock_hand_padding
-    public static final int material_clock_hand_stroke_width
-    public static final int material_clock_period_pm_button
-    public static final int material_clock_period_toggle
-    public static final int material_clock_size
-    public static final int material_clockface_textview
-    public static final int material_clockface_view
-    public static final int material_filled_edittext_font_1_3_padding_bottom
-    public static final int material_filled_edittext_font_1_3_padding_top
-    public static final int material_filled_edittext_font_2_0_padding_bottom
-    public static final int material_filled_edittext_font_2_0_padding_top
-    public static final int material_font_1_3_box_collapsed_padding_top
-    public static final int material_font_2_0_box_collapsed_padding_top
-    public static final int material_helper_text_default_padding_top
-    public static final int material_helper_text_font_1_3_padding_horizontal
-    public static final int material_helper_text_font_1_3_padding_top
-    public static final int material_hour_tv
-    public static final int material_input_text_to_prefix_suffix_padding
-    public static final int material_label
-    public static final int material_minute_tv
-    public static final int material_radial_view_group
-    public static final int material_time_chip
-    public static final int material_time_input
-    public static final int material_time_picker_minimum_screen_height
-    public static final int material_time_picker_minimum_screen_width
-    public static final int material_timepicker
-    public static final int material_value_index
-    public static final int month_grid
-    public static final int month_navigation_fragment_toggle
-    public static final int month_navigation_next
-    public static final int month_navigation_previous
-    public static final int month_title
-    public static final int mtrl_auto_complete_simple_item
-    public static final int mtrl_bottomappbar_fab_bottom_margin
-    public static final int mtrl_calendar_bottom_padding
-    public static final int mtrl_calendar_content_padding
-    public static final int mtrl_calendar_day
-    public static final int mtrl_calendar_day_height
-    public static final int mtrl_calendar_day_of_week
-    public static final int mtrl_calendar_day_selector_frame
-    public static final int mtrl_calendar_day_width
-    public static final int mtrl_calendar_days_of_week
-    public static final int mtrl_calendar_days_of_week_height
-    public static final int mtrl_calendar_dialog_background_inset
-    public static final int mtrl_calendar_frame
-    public static final int mtrl_calendar_horizontal
-    public static final int mtrl_calendar_main_pane
-    public static final int mtrl_calendar_month_horizontal_padding
-    public static final int mtrl_calendar_month_labeled
-    public static final int mtrl_calendar_month_vertical_padding
-    public static final int mtrl_calendar_months
-    public static final int mtrl_calendar_navigation_bottom_padding
-    public static final int mtrl_calendar_navigation_height
-    public static final int mtrl_calendar_navigation_top_padding
-    public static final int mtrl_calendar_vertical
-    public static final int mtrl_calendar_year
-    public static final int mtrl_calendar_year_selector_frame
-    public static final int mtrl_child_content_container
-    public static final int mtrl_exposed_dropdown_menu_popup_elevation
-    public static final int mtrl_exposed_dropdown_menu_popup_vertical_padding
-    public static final int mtrl_fab_hide_motion_spec
-    public static final int mtrl_fab_min_touch_target
-    public static final int mtrl_fab_show_motion_spec
-    public static final int mtrl_fab_transformation_sheet_collapse_spec
-    public static final int mtrl_fab_transformation_sheet_expand_spec
-    public static final int mtrl_internal_children_alpha_tag
-    public static final int mtrl_min_touch_target_size
-    public static final int mtrl_picker_dialog
-    public static final int mtrl_picker_fullscreen
-    public static final int mtrl_picker_header_selection_text
-    public static final int mtrl_picker_header_toggle
-    public static final int mtrl_picker_title_text
-    public static final int mtrl_shape_corner_size_small_component
-    public static final int mtrl_snackbar_background_corner_radius
-    public static final int mtrl_textinput_box_label_cutout_padding
-    public static final int mtrl_textinput_box_stroke_width_default
-    public static final int mtrl_textinput_box_stroke_width_focused
-    public static final int mtrl_textinput_counter_margin_start
-    public static final int row_index_key
-    public static final int selection_type
-    public static final int snackbar_action
-    public static final int snackbar_text
-    public static final int support_simple_spinner_dropdown_item
-    public static final int text_input_error_icon
-    public static final int textinput_counter
-    public static final int textinput_error
-    public static final int textinput_helper_text
-    public static final int textinput_placeholder
-    public static final int textinput_prefix_text
-    public static final int textinput_suffix_text
-    public static final int view_tree_lifecycle_owner
-    public final void animate()
-    public static java.lang.Object checkNotNull(java.lang.Object)
-    public static float clamp(float,float,float)
-    public static int colorAtLightness(int,float)
-    public static int compositeARGBWithAlpha(int,int)
-    public final int convertToConstraintSet(int,int,float,float)
-    public static com.arthenica.smartexception.java.JavaPackageLoader createDefaultCornerTreatment()
-    public static com.google.android.material.shape.EdgeTreatment createDefaultEdgeTreatment()
-    public static float getAlphaPercent(int)
-    public final float getFloatValue(java.lang.Object,java.lang.String,int)
-    public static int growSize(int)
-    public static int layer(int,int)
-    public static void setElevation(android.view.View,float)
-    public final void setFloatValue(java.lang.Object,java.lang.String,int,float)
-    public static void setParentAbsoluteElevation(android.view.View)
-    public final void touchEvent(android.view.MotionEvent)
-androidx.appcompat.R$dimen:
-    public static final int abc_action_bar_stacked_max_height
-    public static final int abc_action_bar_stacked_tab_max_width
-    public static final int abc_action_bar_up_description
-    public static final int abc_cascading_menus_min_smallest_width
-    public static final int abc_config_prefDialogWidth
-    public static final int abc_dropdownitem_icon_width
-    public static final int abc_dropdownitem_text_padding_left
-    public static final int abc_menu_alt_shortcut_label
-    public static final int abc_menu_ctrl_shortcut_label
-    public static final int abc_menu_delete_shortcut_label
-    public static final int abc_menu_enter_shortcut_label
-    public static final int abc_menu_function_shortcut_label
-    public static final int abc_menu_meta_shortcut_label
-    public static final int abc_menu_shift_shortcut_label
-    public static final int abc_menu_space_shortcut_label
-    public static final int abc_menu_sym_shortcut_label
-    public static final int abc_prepend_shortcut_label
-    public static final int abc_search_view_preferred_height
-    public static final int abc_search_view_preferred_width
-    public static final int abc_searchview_description_search
-    public static final int abc_star_big
-    public static final int abc_star_medium
-    public static final int abc_star_small
-    public static final int accessibility_action_clickable_span
-    public static final int accessibility_custom_action_0
-    public static final int accessibility_custom_action_1
-    public static final int accessibility_custom_action_10
-    public static final int accessibility_custom_action_11
-    public static final int accessibility_custom_action_12
-    public static final int accessibility_custom_action_13
-    public static final int accessibility_custom_action_14
-    public static final int accessibility_custom_action_15
-    public static final int accessibility_custom_action_16
-    public static final int accessibility_custom_action_17
-    public static final int accessibility_custom_action_18
-    public static final int accessibility_custom_action_19
-    public static final int accessibility_custom_action_2
-    public static final int accessibility_custom_action_20
-    public static final int accessibility_custom_action_21
-    public static final int accessibility_custom_action_22
-    public static final int accessibility_custom_action_23
-    public static final int accessibility_custom_action_24
-    public static final int accessibility_custom_action_25
-    public static final int accessibility_custom_action_26
-    public static final int accessibility_custom_action_27
-    public static final int accessibility_custom_action_28
-    public static final int accessibility_custom_action_29
-    public static final int accessibility_custom_action_3
-    public static final int accessibility_custom_action_30
-    public static final int accessibility_custom_action_31
-    public static final int accessibility_custom_action_4
-    public static final int accessibility_custom_action_5
-    public static final int accessibility_custom_action_6
-    public static final int accessibility_custom_action_7
-    public static final int accessibility_custom_action_8
-    public static final int accessibility_custom_action_9
-    public static final int androidx_startup
-    public static final int bottomsheet_action_expand_halfway
-    public static final int cardview_compat_inset_shadow
-    public static final int character_counter_content_description
-    public static final int character_counter_overflowed_content_description
-    public static final int character_counter_pattern
-    public static final int clear_text_end_icon_content_description
-    public static final int color_edit
-    public static final int color_preview
-    public static final int color_selector
-    public static final int crop_image_activity
-    public static final int crop_image_view
-    public static final int design_password_eye
-    public static final int error_icon_content_description
-    public static final int exposed_dropdown_menu_content_description
-    public static final int fragment_container_view_tag
     public static final int material_ic_calendar_black_24dp
     public static final int material_ic_edit_black_24dp
+    public static final int material_motion_duration_long_1
+    public static final int material_timepicker_clockface
+    public static final int mtrl_calendar_year_selector_span
     public static final int mtrl_chip_close_icon_content_description
     public static final int mtrl_dropdown_arrow
+    public static final int mtrl_filled_background_color
     public static final int mtrl_ic_arrow_drop_down
     public static final int mtrl_ic_cancel
     public static final int mtrl_picker_announce_current_selection
@@ -19627,30 +19644,24 @@ androidx.appcompat.R$dimen:
     public static final int mtrl_picker_toggle_to_day_selection
     public static final int mtrl_picker_toggle_to_text_input_mode
     public static final int mtrl_picker_toggle_to_year_selection
+    public static final int mtrl_textinput_default_box_stroke_color
+    public static final int mtrl_textinput_disabled_color
+    public static final int mtrl_textinput_hovered_box_stroke_color
     public static final int navigation_empty_icon
     public static final int password_toggle_content_description
-    public static final int special_effects_controller_view_tag
-    public static final int tag_accessibility_actions
-    public static final int tag_accessibility_clickable_spans
-    public static final int tag_accessibility_heading
-    public static final int tag_accessibility_pane_title
-    public static final int tag_on_apply_window_listener
-    public static final int tag_on_receive_content_listener
-    public static final int tag_on_receive_content_mime_types
-    public static final int tag_screen_reader_focusable
-    public static final int tag_state_description
-    public static final int tag_transition_group
-    public static final int tag_unhandled_key_event_manager
-    public static final int tag_unhandled_key_listeners
-    public static final int tag_window_insets_animation_callback
-    public static final int tooltip_precise_anchor_extra_offset
-    public static final int tooltip_precise_anchor_threshold
-    public static final int tooltip_y_offset_non_touch
-    public static final int tooltip_y_offset_touch
-    public static final int view_tree_view_model_store_owner
-    public static final int visible_removing_fragment_view_tag
-    public static long getCharAt(int,java.lang.String[],long)
+    public static final int pick_image_intent_chooser_title
+    public static final int support_simple_spinner_dropdown_item
+    public static final int view_tree_lifecycle_owner
+    public final void animate()
+    public static java.lang.Object checkNotNull(java.lang.Object)
+    public static float clamp(float,float,float)
+    public final int convertToConstraintSet(int,int,float,float)
+    public final float getFloatValue(java.lang.Object,java.lang.String,int)
+    public static int growSize(int)
     public static boolean isMeizuDevice()
+    public final void setFloatValue(java.lang.Object,java.lang.String,int,float)
+    public final void touchEvent(android.view.MotionEvent)
+androidx.appcompat.R$dimen
 androidx.appcompat.R$drawable
 androidx.appcompat.R$id
 androidx.appcompat.R$layout
@@ -20079,10 +20090,17 @@ androidx.appcompat.app.AppCompatViewInflater:
     public final android.view.View createViewFromTag(android.content.Context,java.lang.String,android.util.AttributeSet)
 androidx.appcompat.app.LayoutIncludeDetector:
     private void $r8$constructor$androidx$appcompat$app$LayoutIncludeDetector()
-    private void $r8$constructor$com$unity3d$services$ads$webplayer$g()
+    private void $r8$constructor$com$unity3d$services$banners$properties$a()
+    private void $r8$constructor$com$unity3d$services$core$webview$bridge$invocation$e()
     public synthetic void <init>(android.view.ViewGroup)
-    public final synchronized void a(java.lang.String,com.unity3d.services.ads.webplayer.f)
-    public final int a$enumunboxing$()
+    public static androidx.appcompat.app.LayoutIncludeDetector a()
+    public final com.unity3d.services.store.a a(java.lang.Exception)
+    public final synchronized java.lang.Integer a(java.lang.String)
+    public final java.lang.String a()
+    public final java.util.List a(java.util.List)
+    public final java.util.concurrent.ExecutorService a()
+    public final void a(com.unity3d.services.store.b,com.unity3d.services.store.a,int,java.lang.Exception)
+    public final synchronized void a(java.lang.String,java.lang.Integer)
     public final void add(android.graphics.drawable.Drawable)
     public final void add(android.view.View)
     public final boolean detect(android.util.AttributeSet)
@@ -20445,6 +20463,13 @@ androidx.appcompat.widget.AppCompatEditText:
     public final void initEmojiKeyListener(androidx.appcompat.widget.AppCompatEmojiEditTextHelper)
 androidx.appcompat.widget.AppCompatEmojiEditTextHelper:
     private void $r8$constructor$androidx$appcompat$widget$AppCompatEmojiEditTextHelper(android.widget.EditText)
+    private void $r8$constructor$com$unity3d$services$core$device$reader$h(com.unity3d.services.core.device.reader.p,com.unity3d.services.core.lifecycle.c)
+    private void $r8$constructor$com$unity3d$services$core$device$reader$pii$d(com.unity3d.services.core.device.reader.pii.a)
+    private void $r8$constructor$com$unity3d$services$core$device$reader$pii$d(com.unity3d.services.core.device.reader.pii.a,java.util.Map)
+    private void $r8$constructor$com$unity3d$services$core$webview$bridge$invocation$c(java.util.concurrent.ExecutorService,com.unity3d.services.core.webview.bridge.b,com.unity3d.services.core.webview.bridge.invocation.b)
+    public final synchronized varargs void a(java.lang.String,java.lang.String,int,java.lang.Object[])
+    public final void a(java.util.Map)
+    public final com.unity3d.services.core.device.reader.pii.a b()
     public final boolean isEmojiCapableKeyListener(android.text.method.KeyListener)
 androidx.appcompat.widget.AppCompatHintHelper
 androidx.appcompat.widget.AppCompatImageHelper:
@@ -21063,7 +21088,7 @@ androidx.constraintlayout.core.ArrayRow:
     public final void updateFromSynonymVariable(androidx.constraintlayout.core.LinearSystem,androidx.constraintlayout.core.SolverVariable,boolean)
     public final void updateFromSystem(androidx.constraintlayout.core.LinearSystem)
 androidx.constraintlayout.core.Cache:
-    public androidx.constraintlayout.core.Pools$SimplePool optimizedArrayRowPool
+    public final java.util.Map b()
 androidx.constraintlayout.core.LinearSystem$Row:
     public abstract void addError(androidx.constraintlayout.core.SolverVariable)
     public abstract void clear()
@@ -21741,8 +21766,9 @@ androidx.constraintlayout.widget.Placeholder:
     public final void updatePostMeasure(androidx.constraintlayout.widget.ConstraintLayout)
     public final void updatePreLayout(androidx.constraintlayout.widget.ConstraintLayout)
 androidx.constraintlayout.widget.R$id:
-    public final com.unity3d.services.core.timer.h a(java.lang.Integer,java.lang.Integer,com.unity3d.services.core.timer.f)
-    public final java.lang.String a()
+    public final void a()
+    public final void getCornerPath(com.google.android.material.shape.ShapePath,float,float,android.graphics.RectF,com.google.android.material.shape.CornerSize)
+    public final java.lang.Package getPackage(java.lang.ClassLoader,java.lang.String)
 androidx.constraintlayout.widget.R$styleable:
     public static final int[] ActionBar
     public static final int[] ActionBarLayout
@@ -22266,7 +22292,6 @@ androidx.coordinatorlayout.widget.DirectedAcyclicGraph:
     private void $r8$constructor$androidx$transition$TransitionValuesMaps()
     public final void addEdge(java.lang.Object,java.lang.Object)
     public final void addNode(java.lang.Object)
-    public final java.util.Map b()
     public final void clear()
     public final boolean contains(java.lang.Object)
     public final java.util.ArrayList getEmptyList()
@@ -23638,12 +23663,16 @@ androidx.fragment.app.FragmentStateManager:
     public final androidx.fragment.app.FragmentState saveState()
     public final void setFragmentManagerState(int)
 androidx.fragment.app.FragmentStore:
-    public final com.unity3d.services.core.log.c a()
-    public final java.util.List a()
-    public final java.util.List b()
-    public final java.util.List c()
+    private void $r8$constructor$androidx$fragment$app$FragmentStore()
+    private void $r8$constructor$com$unity3d$services$ads$webplayer$e()
+    public final synchronized void a(java.lang.String,org.json.JSONObject)
+    public final synchronized void b(java.lang.String,org.json.JSONObject)
+    public final synchronized void c(java.lang.String,org.json.JSONObject)
+    public final synchronized void d(java.lang.String)
     public final void dispatchStateChange(int)
     public final void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    public final synchronized void e(java.lang.String)
+    public final synchronized void f(java.lang.String)
     public final androidx.fragment.app.Fragment findFragmentById(int)
     public final androidx.fragment.app.Fragment findFragmentByTag(java.lang.String)
     public final int findFragmentIndexInContainer(androidx.fragment.app.Fragment)
@@ -23811,17 +23840,10 @@ androidx.lifecycle.LiveData:
     public abstract void setValue(java.lang.Object)
 androidx.lifecycle.MethodCallsLogger:
     private void $r8$constructor$androidx$lifecycle$MethodCallsLogger()
-    private void $r8$constructor$com$unity3d$services$banners$properties$a()
-    private void $r8$constructor$com$unity3d$services$core$webview$bridge$invocation$e()
+    private void $r8$constructor$com$unity3d$services$ads$webplayer$g()
     public synthetic void <init>(android.view.View)
-    public static androidx.lifecycle.MethodCallsLogger a()
-    public final com.unity3d.services.store.a a(java.lang.Exception)
-    public final synchronized java.lang.Integer a(java.lang.String)
-    public final java.lang.String a()
-    public final java.util.List a(java.util.List)
-    public final java.util.concurrent.ExecutorService a()
-    public final void a(com.unity3d.services.store.b,com.unity3d.services.store.a,int,java.lang.Exception)
-    public final synchronized void a(java.lang.String,java.lang.Integer)
+    public final synchronized void a(java.lang.String,com.unity3d.services.ads.webplayer.f)
+    public final int a$enumunboxing$()
     public final void add(android.graphics.drawable.Drawable)
     public final void remove(android.graphics.drawable.Drawable)
 androidx.lifecycle.Observer:
@@ -24813,6 +24835,7 @@ androidx.versionedparcelable.VersionedParcel:
     public abstract void writeToParcel()
     public abstract void writeVersionedParcelable()
     public abstract void writeVersionedParcelableCreator()
+androidx.viewbinding.ViewBindings
 androidx.viewpager2.adapter.FragmentStateAdapter$2:
     public final synthetic androidx.viewpager2.adapter.FragmentStateAdapter this$0
     public final synthetic androidx.viewpager2.adapter.FragmentViewHolder val$holder
@@ -24911,7 +24934,7 @@ com.arthenica.smartexception.AbstractExceptions:
     public static boolean ignoreAllCauses
     public static boolean printPackageInformation
     public static java.lang.StackTraceElement[] getStackTrace(java.lang.Throwable,java.util.Set,java.util.Set)
-    public static java.lang.String getVersion(com.arthenica.smartexception.java.JavaPackageLoader,java.lang.Class,java.lang.String)
+    public static java.lang.String getVersion(androidx.constraintlayout.widget.R$id,java.lang.Class,java.lang.String)
     public static java.lang.String libraryName(java.lang.Class)
     public static java.lang.String packageName(java.lang.String)
 com.arthenica.smartexception.ClassLoader
@@ -24926,31 +24949,15 @@ com.arthenica.smartexception.java.Exceptions$1:
     public final java.lang.String getPackageInformation(java.lang.StackTraceElement)
     public final void getUnknownSourceDefinition()
 com.arthenica.smartexception.java.JavaClassLoader
-com.arthenica.smartexception.java.JavaPackageLoader:
-    public final void a()
-    public final void getCornerPath(com.google.android.material.shape.ShapePath,float,float,android.graphics.RectF,com.google.android.material.shape.CornerSize)
-    public final java.lang.Package getPackage(java.lang.ClassLoader,java.lang.String)
+com.arthenica.smartexception.java.JavaPackageLoader
 com.editlike.app.ExportActivity$2:
     public final void apply(com.arthenica.ffmpegkit.FFmpegSession)
 com.editlike.app.ExportActivity:
-    public android.widget.LinearLayout banneradview
     public java.util.Calendar cal1
-    public android.widget.ImageView imageview2
-    public android.widget.ImageView imageview3
-    public android.widget.ImageView imageview4
-    public android.widget.LinearLayout linear2
-    public android.widget.LinearLayout linear5
-    public android.widget.LinearLayout linear6
-    public android.widget.LinearLayout linear8
-    public android.widget.LinearLayout linear9
-    public android.widget.TextView textview3
-    public android.widget.TextView textview4
-    public android.widget.TextView textview5
-    public static synthetic bridge android.widget.LinearLayout -$$Nest$fgetexportingview(com.editlike.app.ExportActivity)
+    public static synthetic bridge com.editlike.app.databinding.ExportBinding -$$Nest$fgetbinding(com.editlike.app.ExportActivity)
     public static synthetic bridge java.lang.String -$$Nest$fgetexportvideoname(com.editlike.app.ExportActivity)
     public static synthetic bridge java.lang.String -$$Nest$fgetexportvideopath(com.editlike.app.ExportActivity)
     public static synthetic bridge android.os.ParcelFileDescriptor -$$Nest$fgetpfd(com.editlike.app.ExportActivity)
-    public static synthetic bridge android.widget.LinearLayout -$$Nest$fgetsavedview(com.editlike.app.ExportActivity)
     public static synthetic bridge android.net.Uri -$$Nest$fgeturiSavedVideo(com.editlike.app.ExportActivity)
     public static synthetic bridge android.content.ContentValues -$$Nest$fgetvalues(com.editlike.app.ExportActivity)
     public static synthetic bridge void -$$Nest$fputuriSavedVideo(com.editlike.app.ExportActivity,android.net.Uri)
@@ -24963,8 +24970,6 @@ com.editlike.app.MainActivity$18$3:
 com.editlike.app.MainActivity$21:
     public final synthetic com.editlike.app.MainActivity this$0
 com.editlike.app.MainActivity$22:
-    public final synthetic com.editlike.app.MainActivity this$0
-com.editlike.app.MainActivity$25:
     public final synthetic com.editlike.app.MainActivity this$0
 com.editlike.app.MainActivity$TrimTimelineView$1:
     public final void frameDecoded(android.graphics.Bitmap,int)
@@ -25005,6 +25010,7 @@ com.editlike.app.MainActivity:
     public android.widget.TextView textview7
     public android.widget.TextView textview8
     public android.widget.TextView textview9
+    public boolean videomuted
     public android.widget.RelativeLayout viewcontainer
     public static synthetic bridge java.lang.String -$$Nest$fgetSTARTTIMEinmillivar(com.editlike.app.MainActivity)
     public static synthetic bridge boolean -$$Nest$fgetVIDEOTRIMMED(com.editlike.app.MainActivity)
@@ -25014,6 +25020,7 @@ com.editlike.app.MainActivity:
     public static synthetic bridge android.widget.LinearLayout -$$Nest$fgetcontainer(com.editlike.app.MainActivity)
     public static synthetic bridge android.widget.EditText -$$Nest$fgetdescription(com.editlike.app.MainActivity)
     public static synthetic bridge android.widget.ImageView -$$Nest$fgetdot3(com.editlike.app.MainActivity)
+    public static synthetic bridge android.media.MediaPlayer -$$Nest$fgetmp(com.editlike.app.MainActivity)
     public static synthetic bridge android.widget.EditText -$$Nest$fgetname(com.editlike.app.MainActivity)
     public static synthetic bridge android.widget.LinearLayout -$$Nest$fgetstatusbar(com.editlike.app.MainActivity)
     public static synthetic bridge android.widget.LinearLayout -$$Nest$fgettoolbar(com.editlike.app.MainActivity)
@@ -25026,8 +25033,34 @@ com.editlike.app.MainActivity:
     public final void Permission()
     public final void SETTIMEANDDATE()
     public final void viewToImage(android.view.View,java.lang.String)
-com.editlike.app.TemplateActivity:
-    public static synthetic bridge android.content.Intent -$$Nest$fgetMainPage(com.editlike.app.TemplateActivity)
+com.editlike.app.databinding.ExportBinding:
+    public final android.widget.ImageView imageview2
+    public final android.widget.ImageView imageview3
+    public final android.widget.ImageView imageview4
+    public final android.widget.LinearLayout linear2
+    public final android.widget.LinearLayout linear5
+    public final android.widget.LinearLayout linear6
+    public final android.widget.LinearLayout linear8
+    public final android.widget.LinearLayout linear9
+    public final android.widget.LinearLayout rootView
+    public final android.widget.TextView textview3
+    public final android.widget.TextView textview4
+    public final android.widget.TextView textview5
+    public final android.widget.LinearLayout getRoot()
+com.editlike.app.databinding.TemplateBinding:
+    public final android.widget.HorizontalScrollView hscroll1
+    public final android.widget.ImageView imageview1
+    public final android.widget.ImageView imageview2
+    public final android.widget.ImageView imageview3
+    public final android.widget.LinearLayout linear1
+    public final androidx.cardview.widget.CardView linear6
+    public final androidx.cardview.widget.CardView linear7
+    public final android.widget.LinearLayout rootView
+    public final android.widget.TextView textview1
+    public final android.widget.TextView textview2
+    public final android.widget.TextView textview3
+    public final android.widget.LinearLayout title
+    public final android.widget.LinearLayout getRoot()
 com.flask.colorpicker.ColorCircle:
     public final int getColor()
     public final float[] getHsv()
@@ -26452,8 +26485,13 @@ com.google.android.material.shadow.ShadowViewDelegate:
 com.google.android.material.shape.CornerTreatment
 com.google.android.material.shape.CutCornerTreatment:
     public float size
+com.google.android.material.shape.EdgeTreatment$$IA$1
+com.google.android.material.shape.EdgeTreatment$$IA$2
+com.google.android.material.shape.EdgeTreatment$$IA$3
 com.google.android.material.shape.EdgeTreatment:
     public final com.unity3d.scar.adapter.common.IScarAdapter a(long,com.unity3d.scar.adapter.common.IAdsErrorHandler)
+    public final com.unity3d.services.core.timer.h a(java.lang.Integer,java.lang.Integer,com.unity3d.services.core.timer.f)
+    public final java.lang.String a()
     public final void forceIntersection()
     public final java.lang.Class loadClass(java.lang.String)
 com.google.android.material.shape.MaterialShapeDrawable$1:
@@ -26508,30 +26546,30 @@ com.google.android.material.shape.ShapeAppearanceModel$Builder:
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setAllCornerSizes(float)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setAllCornerSizes(com.google.android.material.shape.CornerSize)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCorner(int,com.google.android.material.shape.CornerSize)
-    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCorner(com.arthenica.smartexception.java.JavaPackageLoader)
+    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCorner(androidx.constraintlayout.widget.R$id)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCornerSize(com.google.android.material.shape.CornerSize)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomRightCorner(int,com.google.android.material.shape.CornerSize)
-    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomRightCorner(com.arthenica.smartexception.java.JavaPackageLoader)
+    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomRightCorner(androidx.constraintlayout.widget.R$id)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomRightCornerSize(com.google.android.material.shape.CornerSize)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopLeftCorner(int,com.google.android.material.shape.CornerSize)
-    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopLeftCorner(com.arthenica.smartexception.java.JavaPackageLoader)
+    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopLeftCorner(androidx.constraintlayout.widget.R$id)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopLeftCornerSize(com.google.android.material.shape.CornerSize)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopRightCorner(int,com.google.android.material.shape.CornerSize)
-    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopRightCorner(com.arthenica.smartexception.java.JavaPackageLoader)
+    public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopRightCorner(androidx.constraintlayout.widget.R$id)
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder setTopRightCornerSize(com.google.android.material.shape.CornerSize)
 com.google.android.material.shape.ShapeAppearanceModel$CornerSizeUnaryOperator
 com.google.android.material.shape.ShapeAppearanceModel:
     public final com.google.android.material.shape.EdgeTreatment getBottomEdge()
-    public final com.arthenica.smartexception.java.JavaPackageLoader getBottomLeftCorner()
+    public final androidx.constraintlayout.widget.R$id getBottomLeftCorner()
     public final com.google.android.material.shape.CornerSize getBottomLeftCornerSize()
-    public final com.arthenica.smartexception.java.JavaPackageLoader getBottomRightCorner()
+    public final androidx.constraintlayout.widget.R$id getBottomRightCorner()
     public final com.google.android.material.shape.CornerSize getBottomRightCornerSize()
     public final com.google.android.material.shape.EdgeTreatment getLeftEdge()
     public final com.google.android.material.shape.EdgeTreatment getRightEdge()
     public final com.google.android.material.shape.EdgeTreatment getTopEdge()
-    public final com.arthenica.smartexception.java.JavaPackageLoader getTopLeftCorner()
+    public final androidx.constraintlayout.widget.R$id getTopLeftCorner()
     public final com.google.android.material.shape.CornerSize getTopLeftCornerSize()
-    public final com.arthenica.smartexception.java.JavaPackageLoader getTopRightCorner()
+    public final androidx.constraintlayout.widget.R$id getTopRightCorner()
     public final com.google.android.material.shape.CornerSize getTopRightCornerSize()
     public final com.google.android.material.shape.ShapeAppearanceModel$Builder toBuilder()
     public final com.google.android.material.shape.ShapeAppearanceModel withCornerSize(com.google.android.material.shape.CornerSize)
@@ -26547,7 +26585,7 @@ com.google.android.material.shape.ShapeAppearancePathProvider:
     public final void calculatePath(com.google.android.material.shape.ShapeAppearanceModel,float,android.graphics.RectF,android.graphics.Path)
     public final void getCoordinatesOfCorner(int,android.graphics.RectF,android.graphics.PointF)
     public final com.google.android.material.shape.CornerSize getCornerSizeForIndex(int,com.google.android.material.shape.ShapeAppearanceModel)
-    public final com.arthenica.smartexception.java.JavaPackageLoader getCornerTreatmentForIndex(int,com.google.android.material.shape.ShapeAppearanceModel)
+    public final androidx.constraintlayout.widget.R$id getCornerTreatmentForIndex(int,com.google.android.material.shape.ShapeAppearanceModel)
     public final float getEdgeCenterForIndex(android.graphics.RectF,int)
     public final com.google.android.material.shape.EdgeTreatment getEdgeTreatmentForIndex(int,com.google.android.material.shape.ShapeAppearanceModel)
     public static com.google.android.material.shape.ShapeAppearancePathProvider getInstance()
@@ -26926,7 +26964,6 @@ com.google.android.material.transformation.FabTransformationScrimBehavior:
     public final void createScrimAnimation(android.view.View,boolean,boolean,java.util.List,java.util.List)
 com.google.android.material.transformation.FabTransformationSheetBehavior:
     public final void updateImportantForAccessibility(android.view.View,boolean)
-com.itsaky.androidide.logsender.LogSender$Callback
 com.theartofdev.edmodo.cropper.BitmapCroppingWorkerTask$Result:
     public final boolean isSave
 com.theartofdev.edmodo.cropper.BitmapCroppingWorkerTask:
@@ -27185,9 +27222,7 @@ com.unity3d.services.ads.adunit.c:
     public final float h()
     public final float i()
     public final boolean j()
-com.unity3d.services.ads.adunit.d:
-    public static com.unity3d.services.core.configuration.Configuration a
-    public static void a(com.unity3d.services.core.configuration.Configuration)
+com.unity3d.services.ads.adunit.d
 com.unity3d.services.ads.adunit.e:
     public final android.util.SparseArray a(android.util.SparseArray)
     public final android.util.SparseIntArray a(java.util.ArrayList)
@@ -27322,14 +27357,9 @@ com.unity3d.services.ads.video.c:
     public final void a(long)
     public final void b()
     public final void d()
-com.unity3d.services.ads.webplayer.d
-com.unity3d.services.ads.webplayer.e:
-    public final synchronized void a(java.lang.String,org.json.JSONObject)
-    public final synchronized void b(java.lang.String,org.json.JSONObject)
-    public final synchronized void c(java.lang.String,org.json.JSONObject)
-    public final synchronized void d(java.lang.String)
-    public final synchronized void e(java.lang.String)
-    public final synchronized void f(java.lang.String)
+com.unity3d.services.ads.webplayer.d:
+    public static long getCharAt(int,java.lang.String[],long)
+com.unity3d.services.ads.webplayer.e
 com.unity3d.services.ads.webplayer.f$e$a:
     public final synthetic com.unity3d.services.ads.webplayer.f$e b
 com.unity3d.services.ads.webplayer.f:
@@ -27446,7 +27476,6 @@ com.unity3d.services.core.api.Intent:
     public static boolean a(android.content.Intent)
 com.unity3d.services.core.api.Resolve$a:
     public final void a(java.lang.String,java.lang.String)
-com.unity3d.services.core.broadcast.d
 com.unity3d.services.core.cache.a:
     public java.lang.String a
     public final java.io.File a(java.io.File,java.lang.String)
@@ -27583,7 +27612,7 @@ com.unity3d.services.core.device.j$EnumUnboxingLocalUtility
 com.unity3d.services.core.device.j
 com.unity3d.services.core.device.reader.a:
     public final com.unity3d.services.core.device.reader.p a(com.unity3d.services.core.configuration.InitRequestType)
-    public final androidx.fragment.app.FragmentStore c()
+    public final com.unity3d.services.core.log.b c()
 com.unity3d.services.core.device.reader.b:
     public final void a(java.util.Map)
     public final byte[] b()
@@ -27591,20 +27620,12 @@ com.unity3d.services.core.device.reader.c
 com.unity3d.services.core.device.reader.d
 com.unity3d.services.core.device.reader.e
 com.unity3d.services.core.device.reader.f:
-    public final androidx.fragment.app.FragmentStore d()
-com.unity3d.services.core.device.reader.g
-com.unity3d.services.core.device.reader.h:
-    private void $r8$constructor$com$unity3d$services$core$device$reader$h(com.unity3d.services.core.device.reader.p,com.unity3d.services.core.lifecycle.c)
-    private void $r8$constructor$com$unity3d$services$core$device$reader$pii$d(com.unity3d.services.core.device.reader.pii.a)
-    private void $r8$constructor$com$unity3d$services$core$device$reader$pii$d(com.unity3d.services.core.device.reader.pii.a,java.util.Map)
-    private void $r8$constructor$com$unity3d$services$core$webview$bridge$invocation$c(java.util.concurrent.ExecutorService,com.unity3d.services.core.webview.bridge.b,com.unity3d.services.core.webview.bridge.invocation.b)
-    public final synchronized varargs void a(java.lang.String,java.lang.String,int,java.lang.Object[])
-    public final void a(java.util.Map)
-    public final com.unity3d.services.core.device.reader.pii.a b()
+    public final com.unity3d.services.core.log.b d()
+com.unity3d.services.core.device.reader.h
 com.unity3d.services.core.device.reader.i
 com.unity3d.services.core.device.reader.j:
-    public final java.util.Map a(com.unity3d.services.core.device.reader.h)
-    public final java.util.Map b(com.unity3d.services.core.device.reader.h)
+    public final java.util.Map a(androidx.appcompat.widget.AppCompatEmojiEditTextHelper)
+    public final java.util.Map b(androidx.appcompat.widget.AppCompatEmojiEditTextHelper)
 com.unity3d.services.core.device.reader.k
 com.unity3d.services.core.device.reader.l
 com.unity3d.services.core.device.reader.m
@@ -27615,9 +27636,9 @@ com.unity3d.services.core.device.reader.pii.c$a:
 com.unity3d.services.core.device.reader.pii.c:
     public final java.util.Map b()
     public final java.util.HashMap c()
-    public final com.unity3d.services.core.device.reader.h d()
-    public final com.unity3d.services.core.device.reader.h e()
-    public final com.unity3d.services.core.device.reader.h f()
+    public final androidx.appcompat.widget.AppCompatEmojiEditTextHelper d()
+    public final androidx.appcompat.widget.AppCompatEmojiEditTextHelper e()
+    public final androidx.appcompat.widget.AppCompatEmojiEditTextHelper f()
 com.unity3d.services.core.device.reader.pii.d
 com.unity3d.services.core.device.reader.pii.e$EnumUnboxingLocalUtility:
     public static void <clinit>()
@@ -27637,7 +27658,11 @@ com.unity3d.services.core.lifecycle.c:
     public final synchronized void b(com.unity3d.services.core.lifecycle.b)
 com.unity3d.services.core.log.a:
     public static boolean b()
-com.unity3d.services.core.log.b
+com.unity3d.services.core.log.b:
+    public final com.unity3d.services.core.log.c a()
+    public final java.util.List a()
+    public final java.util.List b()
+    public final java.util.List c()
 com.unity3d.services.core.log.c:
     public final void a()
     public final java.lang.String b()
@@ -27653,7 +27678,7 @@ com.unity3d.services.core.misc.a:
 com.unity3d.services.core.misc.b:
     public abstract void a(java.lang.Object)
 com.unity3d.services.core.misc.e:
-    public final org.json.JSONObject a(java.lang.String,androidx.fragment.app.FragmentStore)
+    public final org.json.JSONObject a(java.lang.String,com.unity3d.services.core.log.b)
     public final org.json.JSONObject a(java.lang.String,java.util.List,java.util.List,java.util.List)
     public final boolean a(java.lang.String,java.util.List,java.util.List)
 com.unity3d.services.core.misc.f
@@ -27933,7 +27958,7 @@ com.unity3d.services.store.gpbl.bridges.g:
 com.unity3d.services.store.gpbl.c:
     public final void a(com.unity3d.services.store.gpbl.b)
     public final void a(java.lang.String,int,com.unity3d.services.store.listeners.a)
-    public final void a(java.lang.String,com.unity3d.services.ads.webplayer.e)
+    public final void a(java.lang.String,androidx.fragment.app.FragmentStore)
 com.unity3d.services.store.gpbl.proxies.a:
     public static java.lang.String a
     public static java.lang.String b
@@ -27949,7 +27974,7 @@ com.unity3d.services.store.gpbl.proxies.c:
     public static java.lang.Class c$1()
 com.unity3d.services.store.gpbl.proxies.d:
     public final void a(java.lang.Object,java.util.List)
-    public final com.unity3d.services.ads.webplayer.e d()
+    public final androidx.fragment.app.FragmentStore d()
 com.unity3d.services.store.gpbl.proxies.e
 com.unity3d.services.store.listeners.a:
     public abstract void a(com.unity3d.services.store.gpbl.bridges.a,java.util.List)
