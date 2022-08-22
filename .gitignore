@@ -6,7 +6,7 @@ lint/tmp/
 
 # Log Files
 *.log
-app/build/outputs/logs/
+/app/build/outputs/logs/
 
 # other
 /build/
