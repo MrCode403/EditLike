@@ -28,7 +28,8 @@
 				android:text="CHOOSE A VIDEO\nTHEME/TEMPLATE"
 				android:textSize="20sp"
 				android:textStyle="bold"
-				android:textColor="#FFFFFF" />
+				android:textColor="#FFFFFF"
+				android:fontFamily="@font/josefinsansfont" />
 			<ImageView
 				android:id="@+id/imageview3"
 				android:layout_width="50dp"

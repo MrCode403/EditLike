@@ -35,26 +35,17 @@ public class PermissionsActivity extends AppCompatActivity {
   }
 
   public void Permission() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      // IF ANDROID VERSION IS GREATER OR EQUAL TO ANDROID 9 (API 29) ~~
-      if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-          == PackageManager.PERMISSION_DENIED) {
-        ActivityCompat.requestPermissions(
-            this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, 1000);
-      }
-    } else {
-      // IF ANDROID VERSION IS LESS THAN ANDROID 9 (API 29) ~~
-      if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-              == PackageManager.PERMISSION_DENIED
-          || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-              == PackageManager.PERMISSION_DENIED) {
-        ActivityCompat.requestPermissions(
-            this,
-            new String[] {
-              Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
-            },
-            1000);
-      }
+    // IF ANDROID VERSION IS LESS THAN ANDROID 9 (API 29) ~~
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_DENIED
+        || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_DENIED) {
+      ActivityCompat.requestPermissions(
+          this,
+          new String[] {
+            Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
+          },
+          1000);
     }
   }
 
@@ -63,12 +54,16 @@ public class PermissionsActivity extends AppCompatActivity {
       int requestCode, String[] permissions, int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     if (requestCode == 1000) {
-      final Intent MainPage = new Intent();
-      MainPage.setClass(getApplicationContext(), MainActivity.class);
-      MainPage.putExtra("TEMPLATE", getIntent().getStringExtra("TEMPLATE"));
-      MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-      startActivity(MainPage);
-      finish();
+      if (requestCode == Activity.RESULT_OK) {
+        final Intent MainPage = new Intent();
+        MainPage.setClass(getApplicationContext(), MainActivity.class);
+        MainPage.putExtra("TEMPLATE", getIntent().getStringExtra("TEMPLATE"));
+        MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(MainPage);
+        finish();
+      } else {
+        Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+      }
     }
   }
 }

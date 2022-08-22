@@ -38,13 +38,6 @@ public class TemplateActivity extends AppCompatActivity {
             template1clicked = true;
             template2clicked = false;
             Permission();
-            /*
-            final Intent MainPage = new Intent();
-            MainPage.setClass(getApplicationContext(), MainActivity.class);
-            MainPage.putExtra("TEMPLATE", "TEMPLATE1");
-            MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(MainPage);
-            */
           }
         });
 
@@ -55,13 +48,6 @@ public class TemplateActivity extends AppCompatActivity {
             template2clicked = true;
             template1clicked = false;
             Permission();
-            /*
-            final Intent MainPage = new Intent();
-            MainPage.setClass(getApplicationContext(), MainActivity.class);
-            MainPage.putExtra("TEMPLATE", "TEMPLATE2");
-            MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(MainPage);
-            */
           }
         });
   }
@@ -89,35 +75,18 @@ public class TemplateActivity extends AppCompatActivity {
   public void Permission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
       // IF ANDROID VERSION IS GREATER OR EQUAL TO ANDROID 9 (API 29) ~~
-      if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-          == PackageManager.PERMISSION_DENIED) {
-        if (template1clicked) {
-          final Intent PermissionPage = new Intent();
-          PermissionPage.setClass(getApplicationContext(), PermissionsActivity.class);
-          PermissionPage.putExtra("TEMPLATE", "TEMPLATE1");
-          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(PermissionPage);
-        } else if (template2clicked) {
-          final Intent PermissionPage = new Intent();
-          PermissionPage.setClass(getApplicationContext(), PermissionsActivity.class);
-          PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
-          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(PermissionPage);
-        }
-      } else {
-        if (template1clicked) {
-          final Intent MainPage = new Intent();
-          MainPage.setClass(getApplicationContext(), MainActivity.class);
-          MainPage.putExtra("TEMPLATE", "TEMPLATE1");
-          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(MainPage);
-        } else if (template2clicked) {
-          final Intent MainPage = new Intent();
-          MainPage.setClass(getApplicationContext(), MainActivity.class);
-          MainPage.putExtra("TEMPLATE", "TEMPLATE2");
-          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(MainPage);
-        }
+      if (template1clicked) {
+        final Intent MainPage = new Intent();
+        MainPage.setClass(getApplicationContext(), MainActivity.class);
+        MainPage.putExtra("TEMPLATE", "TEMPLATE1");
+        MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(MainPage);
+      } else if (template2clicked) {
+        final Intent MainPage = new Intent();
+        MainPage.setClass(getApplicationContext(), MainActivity.class);
+        MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+        MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(MainPage);
       }
     } else {
       // IF ANDROID VERSION IS LESS THAN ANDROID 9 (API 29) ~~
