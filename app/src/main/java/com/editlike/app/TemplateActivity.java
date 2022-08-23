@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.*;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.*;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import com.editlike.app.TemplateActivity;
 import com.editlike.app.databinding.TemplateBinding;
 import io.michaelrocks.paranoid.Obfuscate;
@@ -30,7 +32,7 @@ public class TemplateActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     binding = TemplateBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-
+    
     binding.template1.setOnClickListener(
         new View.OnClickListener() {
           @Override

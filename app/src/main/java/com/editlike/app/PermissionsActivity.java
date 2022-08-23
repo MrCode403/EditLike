@@ -1,10 +1,12 @@
 package com.editlike.app;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.*;
 import android.os.*;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.provider.Settings;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.Manifest;
@@ -62,7 +64,13 @@ public class PermissionsActivity extends AppCompatActivity {
         startActivity(MainPage);
         finish();
       } else {
-        Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+        final Intent AppSettings =
+            new Intent(
+                Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.parse("package:" + getPackageName()));
+        AppSettings.addCategory(Intent.CATEGORY_DEFAULT);
+        AppSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivityForResult(AppSettings, 50);
       }
     }
   }
