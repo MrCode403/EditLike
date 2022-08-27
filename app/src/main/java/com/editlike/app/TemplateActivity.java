@@ -1,6 +1,7 @@
 package com.editlike.app;
 
 import android.Manifest;
+import android.R;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -32,7 +33,6 @@ public class TemplateActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     binding = TemplateBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-    
     binding.template1.setOnClickListener(
         new View.OnClickListener() {
           @Override
@@ -42,7 +42,6 @@ public class TemplateActivity extends AppCompatActivity {
             Permission();
           }
         });
-
     binding.template2.setOnClickListener(
         new View.OnClickListener() {
           @Override
