@@ -19,4 +19,3 @@ templates
     <img width='170px%' alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
   </a>
 </div>
-![Repo Size](https://img.shields.io/github/languages/code-
