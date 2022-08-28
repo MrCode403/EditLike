@@ -108,8 +108,6 @@ public class MainActivity extends AppCompatActivity
   public final int REQ_CD_CROPPHOTO = 103;
   // Intent ResultCode for picking background video from gallery and checking video picked or not
   public final int REQ_CD_BACKGROUNDVIDEO = 104;
-  // Unity Ads Game Id (here changed for security reasons)
-  private String GameID = "000000";
   // Defining Global Timer Variable, used to update Video when trimmed
   private Timer timer1 = new Timer();
   // Global float Variable, used to move tweetview(tweelayout.xml) with fingers
@@ -118,14 +116,14 @@ public class MainActivity extends AppCompatActivity
   private float dY;
   // Global float Variable, used to move tweetview(tweelayout.xml) with fingers
   private int lastAction;
+  // Unity Ads Game Id (here changed for security reasons)
+  private String GameID = "000000";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
     // APP LOGS GENERATOR (com.itsaky.androidide.logsender.LogSender)
     // LogSender.startLogging(this);
-
     // main.xml Binding
     mainbinding = MainBinding.inflate(getLayoutInflater());
     setContentView(mainbinding.getRoot());
@@ -149,15 +147,19 @@ public class MainActivity extends AppCompatActivity
         TweetlayoutBinding.inflate(getLayoutInflater(), mainbinding.background, true);
 
     // EVERYTHING ON INITIALISE ~~
+    //
     if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE1")) {
       backgroundbinding.addbackgroundvideobutton.setVisibility(View.GONE);
     } else {
       backgroundbinding.addbackgroundvideobutton.setVisibility(View.VISIBLE);
       tweetlayoutbinding.container.setVisibility(View.GONE);
     }
-
+    
+    // Set Tag to know video sound is hearable or muted
     videobinding.imageview9.setTag("sound");
+    // Remove Default Controllers of videoview
     tweetlayoutbinding.videoview1.setMediaController(null);
+    // Initialise Unity Ads to be used in ExportActivity
     UnityAds.initialize(this, GameID, false);
 
     // SET TIME AND DATE ~~
@@ -262,7 +264,7 @@ public class MainActivity extends AppCompatActivity
   /*«««««««««««««««««««« [ CLOSES ON CREATE ] »»»»»»»»»»»»»»»»»»»»»*/
   /*«««««««««««««««««««« [ CLOSES ON CREATE ] »»»»»»»»»»»»»»»»»»»»»*/
 
-  // ON ACTIVITY RESUMED
+  // On Activity Resume
   @Override
   public void onResume() {
     super.onResume();
@@ -276,7 +278,8 @@ public class MainActivity extends AppCompatActivity
       }
     }
   }
-
+  
+  // On Pause
   @Override
   public void onPause() {
     super.onPause();
