@@ -15,5 +15,7 @@ A Tweet Meme video editor
 
 </div>
 <p align='center'>
-Edit Like is a tweet like memes video editor providing already setup tweet templates
+Edit Like is a tweet like memes video <br>
+editor providing already setup tweet <br>
+templates
 </p>
