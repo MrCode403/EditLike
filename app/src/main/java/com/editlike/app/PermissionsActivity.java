@@ -60,6 +60,7 @@ public class PermissionsActivity extends AppCompatActivity {
         final Intent MainPage = new Intent();
         MainPage.setClass(getApplicationContext(), MainActivity.class);
         MainPage.putExtra("TEMPLATE", getIntent().getStringExtra("TEMPLATE"));
+        MainPage.putExtra("VIDEOURI", getIntent().getStringExtra("VIDEOURI"));
         MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(MainPage);
         finish();

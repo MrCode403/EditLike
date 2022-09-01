@@ -15,7 +15,7 @@
 		android:orientation="horizontal">
 		<LinearLayout
 			android:id="@+id/movebutton"
-			android:layout_width="100dp"
+			android:layout_width="60dp"
 			android:layout_height="match_parent"
 			android:gravity="center_horizontal|center_vertical"
 			android:orientation="vertical">
@@ -33,5 +33,46 @@
 				android:textSize="10sp"
 				android:textColor="#FFFFFF" />
 		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/tweetviewresizebutton"
+			android:layout_width="60dp"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="15dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical">
+			<ImageView
+				android:id="@+id/imageview7"
+				android:layout_width="25dp"
+				android:layout_height="25dp"
+				android:padding="3dp"
+				android:src="@drawable/resizeicon"
+				android:scaleType="centerInside" />
+			<TextView
+				android:id="@+id/textview9"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Resize"
+				android:textSize="10sp"
+				android:textColor="#FFFFFF" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linear2"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:padding="8dp"
+		android:background="#7289DA"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:visibility="gone">
+		<SeekBar
+			android:id="@+id/seekbar1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:max="20"
+			android:progressBackgroundTint="#FFFFFF"
+			android:progressTint="#FFFFFF"
+			android:thumbTint="#FFFFFF" />
 	</LinearLayout>
 </LinearLayout>

@@ -54,7 +54,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
-    implements View.OnClickListener, View.OnFocusChangeListener {
+    implements View.OnClickListener, View.OnFocusChangeListener, SeekBar.OnSeekBarChangeListener {
 
   // mainbinding is for main.xml
   private MainBinding mainbinding;
@@ -153,8 +153,23 @@ public class MainActivity extends AppCompatActivity
     } else {
       backgroundbinding.addbackgroundvideobutton.setVisibility(View.VISIBLE);
       tweetlayoutbinding.container.setVisibility(View.GONE);
+      mainbinding.featbutton.setVisibility(View.VISIBLE);
+      vidview = new VideoView(this);
+      vidview.setLayoutParams(
+          new LinearLayout.LayoutParams(
+              LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+      tweetlayoutbinding.backgroundvideoview.addView(vidview);
+      vidview.setVideoURI(Uri.parse(getIntent().getStringExtra("VIDEOURI")));
+      vidview.start();
+      vidview.setOnCompletionListener(
+          new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+              vidview.start();
+            }
+          });
     }
-    
+
     // Set Tag to know video sound is hearable or muted
     videobinding.imageview9.setTag("sound");
     // Remove Default Controllers of videoview
@@ -214,10 +229,13 @@ public class MainActivity extends AppCompatActivity
     videobinding.replacebutton.setOnClickListener(this);
     videobinding.soundbutton.setOnClickListener(this);
     featbinding.movebutton.setOnClickListener(this);
+    featbinding.tweetviewresizebutton.setOnClickListener(this);
     // On Focus Change Listener
     tweetlayoutbinding.username.setOnFocusChangeListener(this);
     tweetlayoutbinding.name.setOnFocusChangeListener(this);
     tweetlayoutbinding.description.setOnFocusChangeListener(this);
+    // On Change Listener
+    featbinding.seekbar1.setOnSeekBarChangeListener(this);
 
     // VIDEOSIZESEEKBAR (SEEKBAR) CHANGED ~~
     videobinding.videosizeseekbar.setOnSeekBarChangeListener(
@@ -278,7 +296,7 @@ public class MainActivity extends AppCompatActivity
       }
     }
   }
-  
+
   // On Pause
   @Override
   public void onPause() {
@@ -320,9 +338,14 @@ public class MainActivity extends AppCompatActivity
         }
         break;
       case "FEAT":
-        mainbinding.bottommainbar.removeAllViews();
-        mainbinding.bottommainbar.addView(mainbinding.bottombar);
-        BOTTOMBARLAYOUT = "BOTTOMBAR";
+        if (featbinding.linear1.getVisibility() == View.VISIBLE) {
+          mainbinding.bottommainbar.removeAllViews();
+          mainbinding.bottommainbar.addView(mainbinding.bottombar);
+          BOTTOMBARLAYOUT = "BOTTOMBAR";
+        } else {
+          featbinding.linear1.setVisibility(View.VISIBLE);
+          featbinding.linear2.setVisibility(View.GONE);
+        }
         break;
       default:
         finish();
@@ -412,14 +435,8 @@ public class MainActivity extends AppCompatActivity
         }
         break;
       case REQ_CD_BACKGROUNDVIDEO:
-        if (resultCode == Activity.RESULT_OK) {
-          vidview = new VideoView(this);
-          vidview.setLayoutParams(
-              new LinearLayout.LayoutParams(
-                  LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-          tweetlayoutbinding.backgroundvideoview.addView(vidview);
-          vidview.setVideoURI(data.getData());
-        }
+        if (resultCode == Activity.RESULT_OK) {}
+
         break;
       default:
         break;
@@ -577,6 +594,9 @@ public class MainActivity extends AppCompatActivity
         break;
       case R.id.movebutton:
         movebuttonOnClicked();
+        break;
+      case R.id.tweetviewresizebutton:
+        tweetviewresizebuttonOnClicked();
         break;
     }
   }
@@ -813,6 +833,11 @@ public class MainActivity extends AppCompatActivity
     }
   }
 
+  public void tweetviewresizebuttonOnClicked() {
+    featbinding.linear1.setVisibility(View.GONE);
+    featbinding.linear2.setVisibility(View.VISIBLE);
+  }
+
   public void usernameOnFocusChanged(boolean hasFocus) {
     if (hasFocus) {
       tweetlayoutbinding.username.setHint("type a username here...");
@@ -861,5 +886,18 @@ public class MainActivity extends AppCompatActivity
     }
     return super.dispatchTouchEvent(event);
   }
+
+  @Override
+  public void onProgressChanged(SeekBar seekbar, int param, boolean arg2) {
+    final int _progressValue = param;
+    tweetlayoutbinding.tweetview.setScaleX((float) _progressValue);
+    tweetlayoutbinding.tweetview.setScaleY((float) _progressValue);
+  }
+
+  @Override
+  public void onStartTrackingTouch(SeekBar seekbar) {}
+
+  @Override
+  public void onStopTrackingTouch(SeekBar seekbar) {}
 }
 

@@ -2,6 +2,8 @@ package com.editlike.app;
 
 import android.Manifest;
 import android.R;
+import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -17,9 +19,11 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
+import com.editlike.app.MainActivity;
 import com.editlike.app.TemplateActivity;
 import com.editlike.app.databinding.TemplateBinding;
 import io.michaelrocks.paranoid.Obfuscate;
+import java.util.ArrayList;
 
 @Obfuscate
 public class TemplateActivity extends AppCompatActivity {
@@ -27,6 +31,7 @@ public class TemplateActivity extends AppCompatActivity {
   private TemplateBinding binding;
   private boolean template1clicked = false;
   private boolean template2clicked = false;
+  public final int REQ_CD_PICKVIDEO = 101;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +80,7 @@ public class TemplateActivity extends AppCompatActivity {
 
   public void Permission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      // IF ANDROID VERSION IS GREATER OR EQUAL TO ANDROID 9 (API 29) ~~
+      // IF ANDROID VERSION IS GREATER OR EQUAL TO ANDROID 10 (API 29) ~~
       if (template1clicked) {
         final Intent MainPage = new Intent();
         MainPage.setClass(getApplicationContext(), MainActivity.class);
@@ -83,11 +88,11 @@ public class TemplateActivity extends AppCompatActivity {
         MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(MainPage);
       } else if (template2clicked) {
-        final Intent MainPage = new Intent();
-        MainPage.setClass(getApplicationContext(), MainActivity.class);
-        MainPage.putExtra("TEMPLATE", "TEMPLATE2");
-        MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(MainPage);
+        final Intent PICKVIDEO =
+            new Intent(
+                Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        PICKVIDEO.setType("video/*");
+        startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
       }
     } else {
       // IF ANDROID VERSION IS LESS THAN ANDROID 9 (API 29) ~~
@@ -102,11 +107,12 @@ public class TemplateActivity extends AppCompatActivity {
           PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
           startActivity(PermissionPage);
         } else if (template2clicked) {
-          final Intent PermissionPage = new Intent();
-          PermissionPage.setClass(getApplicationContext(), MainActivity.class);
-          PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
-          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(PermissionPage);
+          final Intent PICKVIDEO =
+              new Intent(
+                  Intent.ACTION_PICK,
+                  android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+          PICKVIDEO.setType("video/*");
+          startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
         }
       } else {
         if (template1clicked) {
@@ -116,13 +122,42 @@ public class TemplateActivity extends AppCompatActivity {
           MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
           startActivity(MainPage);
         } else if (template2clicked) {
-          final Intent MainPage = new Intent();
-          MainPage.setClass(getApplicationContext(), MainActivity.class);
-          MainPage.putExtra("TEMPLATE", "TEMPLATE2");
-          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(MainPage);
+          final Intent PICKVIDEO =
+              new Intent(
+                  Intent.ACTION_PICK,
+                  android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+          PICKVIDEO.setType("video/*");
+          startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
         }
       }
+    }
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    switch (requestCode) {
+      case REQ_CD_PICKVIDEO:
+        if (resultCode == Activity.RESULT_OK) {
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            final Intent MainPage = new Intent();
+            MainPage.setClass(getApplicationContext(), MainActivity.class);
+            MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+            MainPage.putExtra("VIDEOURI", data.getData().toString());
+            MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(MainPage);
+          } else {
+            final Intent PermissionPage = new Intent();
+            PermissionPage.setClass(getApplicationContext(), MainActivity.class);
+            PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
+            PermissionPage.putExtra("VIDEOURI", data.getData().toString());
+            PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(PermissionPage);
+          }
+        }
+        break;
+      default:
+        break;
     }
   }
 }
