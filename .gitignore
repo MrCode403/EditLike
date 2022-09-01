@@ -1,12 +1,1 @@
-# lint
-lint/intermediates/
-lint/generated/
-lint/outputs/
-lint/tmp/
 
-# Log Files
-*.log
-/app/build/outputs/logs/
-
-# other
-/build/
