@@ -4,7 +4,6 @@ import android.app.*;
 import android.app.Activity;
 import android.content.*;
 import android.content.ClipData;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.*;
 import android.graphics.*;
@@ -24,24 +23,16 @@ import android.view.View.*;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.editlike.app.Interfaces.TrimTimelineViewListener;
-import com.editlike.app.MainActivity;
 import com.editlike.app.Utils.TrimTimelineView;
-import com.editlike.app.databinding.BackgroundbottombarBinding;
-import com.editlike.app.databinding.DescriptionbottombarBinding;
 import com.editlike.app.databinding.FeatbottombarBinding;
 import com.editlike.app.databinding.MainBinding;
 import com.editlike.app.databinding.ToolbottombarBinding;
 import com.editlike.app.databinding.TweetlayoutBinding;
 import com.editlike.app.databinding.VideobottombarBinding;
-import com.flask.colorpicker.*;
-import com.flask.colorpicker.OnColorSelectedListener;
-import com.flask.colorpicker.builder.ColorPickerClickListener;
-import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import com.unity3d.ads.UnityAds;
@@ -60,10 +51,6 @@ public class MainActivity extends AppCompatActivity
   private MainBinding mainbinding;
   // toolbinding is for toolbottombar.xml
   private ToolbottombarBinding toolbinding;
-  // descriptionbinding is for descriptionbottombar.xml
-  private DescriptionbottombarBinding descriptionbinding;
-  // backgroundbinding is for backgroundbottombar.xml
-  private BackgroundbottombarBinding backgroundbinding;
   // videobinding is for videobottombar.xml
   private VideobottombarBinding videobinding;
   // featbinding is for featbottombar.xml
@@ -130,12 +117,6 @@ public class MainActivity extends AppCompatActivity
     // toolbarbottombar.xml Binding
     toolbinding =
         ToolbottombarBinding.inflate(getLayoutInflater(), mainbinding.bottommainbar, false);
-    // descriptionbottombar.xml Binding
-    descriptionbinding =
-        DescriptionbottombarBinding.inflate(getLayoutInflater(), mainbinding.bottommainbar, false);
-    // backgroundbottombar.xml Binding
-    backgroundbinding =
-        BackgroundbottombarBinding.inflate(getLayoutInflater(), mainbinding.bottommainbar, false);
     // videobottombar.xml Binding
     videobinding =
         VideobottombarBinding.inflate(getLayoutInflater(), mainbinding.bottommainbar, false);
@@ -148,10 +129,7 @@ public class MainActivity extends AppCompatActivity
 
     // EVERYTHING ON INITIALISE ~~
     //
-    if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE1")) {
-      backgroundbinding.addbackgroundvideobutton.setVisibility(View.GONE);
-    } else {
-      backgroundbinding.addbackgroundvideobutton.setVisibility(View.VISIBLE);
+    if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE2")) {
       tweetlayoutbinding.container.setVisibility(View.GONE);
       mainbinding.featbutton.setVisibility(View.VISIBLE);
       vidview = new VideoView(this);
@@ -214,16 +192,12 @@ public class MainActivity extends AppCompatActivity
     tweetlayoutbinding.profilephoto.setOnClickListener(this);
     mainbinding.expandfab.setOnClickListener(this);
     mainbinding.toolbarbutton.setOnClickListener(this);
-    mainbinding.backgroundbutton.setOnClickListener(this);
-    mainbinding.descriptionbutton.setOnClickListener(this);
     mainbinding.videobutton.setOnClickListener(this);
     mainbinding.featbutton.setOnClickListener(this);
     toolbinding.showhidetoolbar.setOnClickListener(this);
     toolbinding.showhide3dot.setOnClickListener(this);
     toolbinding.showhidestatusbar.setOnClickListener(this);
-    backgroundbinding.choosecolorbutton.setOnClickListener(this);
-    backgroundbinding.addbackgroundvideobutton.setOnClickListener(this);
-    descriptionbinding.showhidedescriptionbutton.setOnClickListener(this);
+    toolbinding.showhidedescriptionbutton.setOnClickListener(this);
     videobinding.trimbutton.setOnClickListener(this);
     videobinding.videosizebutton.setOnClickListener(this);
     videobinding.replacebutton.setOnClickListener(this);
@@ -550,12 +524,6 @@ public class MainActivity extends AppCompatActivity
       case R.id.toolbarbutton:
         toolbarbuttonOnClicked();
         break;
-      case R.id.backgroundbutton:
-        backgroundbuttonOnClicked();
-        break;
-      case R.id.descriptionbutton:
-        descriptionbuttonOnClicked();
-        break;
       case R.id.videobutton:
         videobuttonOnClicked();
         break;
@@ -570,12 +538,6 @@ public class MainActivity extends AppCompatActivity
         break;
       case R.id.showhidestatusbar:
         showhidestatusbarOnClicked();
-        break;
-      case R.id.choosecolorbutton:
-        choosecolorbuttonOnClicked();
-        break;
-      case R.id.addbackgroundvideobutton:
-        addbackgroundvideobuttonOnClicked();
         break;
       case R.id.showhidedescriptionbutton:
         showhidedescriptionbuttonOnClicked();
@@ -608,7 +570,7 @@ public class MainActivity extends AppCompatActivity
         usernameOnFocusChanged(hasFocus);
         break;
       case R.id.name:
-        usernameOnFocusChanged(hasFocus);
+        nameOnFocusChanged(hasFocus);
         break;
       case R.id.description:
         descriptionOnFocusChanged(hasFocus);
@@ -684,18 +646,6 @@ public class MainActivity extends AppCompatActivity
     BOTTOMBARLAYOUT = "TOOLBAR";
   }
 
-  public void backgroundbuttonOnClicked() {
-    mainbinding.bottommainbar.removeView(mainbinding.bottombar);
-    mainbinding.bottommainbar.addView(backgroundbinding.getRoot());
-    BOTTOMBARLAYOUT = "BACKGROUND";
-  }
-
-  public void descriptionbuttonOnClicked() {
-    mainbinding.bottommainbar.removeView(mainbinding.bottombar);
-    mainbinding.bottommainbar.addView(descriptionbinding.getRoot());
-    BOTTOMBARLAYOUT = "DESCRIPTION";
-  }
-
   public void videobuttonOnClicked() {
     mainbinding.bottommainbar.removeView(mainbinding.bottombar);
     mainbinding.bottommainbar.addView(videobinding.getRoot());
@@ -738,50 +688,13 @@ public class MainActivity extends AppCompatActivity
     }
   }
 
-  public void choosecolorbuttonOnClicked() {
-    ColorPickerDialogBuilder.with(MainActivity.this)
-        .setTitle(R.string.color_chooser_dialog_title)
-        .initialColor(0xFFFFFFFF)
-        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
-        .density(15)
-        .setOnColorSelectedListener(
-            new OnColorSelectedListener() {
-              @Override
-              public void onColorSelected(int selectedColor) {}
-            })
-        .setPositiveButton(
-            "OK",
-            new ColorPickerClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
-                tweetlayoutbinding.ground.setBackgroundColor(selectedColor);
-              }
-            })
-        .setNegativeButton(
-            "CANCEL",
-            new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog, int which) {}
-            })
-        .build()
-        .show();
-  }
-
-  public void addbackgroundvideobuttonOnClicked() {
-    Intent BACKGROUNDVIDEO =
-        new Intent(
-            Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-    BACKGROUNDVIDEO.setType("video/*");
-    startActivityForResult(BACKGROUNDVIDEO, REQ_CD_BACKGROUNDVIDEO);
-  }
-
   public void showhidedescriptionbuttonOnClicked() {
     if (tweetlayoutbinding.description.getVisibility() == View.VISIBLE) {
       tweetlayoutbinding.description.setVisibility(View.GONE);
-      descriptionbinding.imageview6.setImageResource(R.drawable.hidden);
+      toolbinding.imageview9.setImageResource(R.drawable.hidden);
     } else {
       tweetlayoutbinding.description.setVisibility(View.VISIBLE);
-      descriptionbinding.imageview6.setImageResource(R.drawable.visible);
+      toolbinding.imageview9.setImageResource(R.drawable.visible);
     }
   }
 

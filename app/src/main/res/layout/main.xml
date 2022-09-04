@@ -61,59 +61,13 @@
 								android:layout_width="25dp"
 								android:layout_height="25dp"
 								android:padding="3dp"
-								android:src="@drawable/dnjdej"
+								android:src="@drawable/visible"
 								android:scaleType="centerInside" />
 							<TextView
 								android:id="@+id/textview8"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:text="Tools"
-								android:textSize="10sp"
-								android:textColor="#FFFFFF" />
-						</LinearLayout>
-						<LinearLayout
-							android:id="@+id/descriptionbutton"
-							android:layout_width="wrap_content"
-							android:layout_height="match_parent"
-							android:layout_marginLeft="15dp"
-							android:gravity="center_horizontal|center_vertical"
-							android:orientation="vertical"
-							android:layout_weight="1">
-							<ImageView
-								android:id="@+id/imageview9"
-								android:layout_width="25dp"
-								android:layout_height="25dp"
-								android:padding="3dp"
-								android:src="@drawable/bsvh"
-								android:scaleType="centerInside" />
-							<TextView
-								android:id="@+id/textview11"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:text="Descipt"
-								android:textSize="10sp"
-								android:textColor="#FFFFFF" />
-						</LinearLayout>
-						<LinearLayout
-							android:id="@+id/backgroundbutton"
-							android:layout_width="wrap_content"
-							android:layout_height="match_parent"
-							android:layout_marginLeft="15dp"
-							android:gravity="center_horizontal|center_vertical"
-							android:orientation="vertical"
-							android:layout_weight="1">
-							<ImageView
-								android:id="@+id/imageview10"
-								android:layout_width="25dp"
-								android:layout_height="25dp"
-								android:padding="3dp"
-								android:src="@drawable/dnby"
-								android:scaleType="centerInside" />
-							<TextView
-								android:id="@+id/textview12"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:text="Background"
+								android:text="Visibility"
 								android:textSize="10sp"
 								android:textColor="#FFFFFF" />
 						</LinearLayout>
