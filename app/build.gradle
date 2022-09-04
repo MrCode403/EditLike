@@ -72,6 +72,11 @@ android {
 	buildFeatures {
         viewBinding true
     }
+    
+    lint {
+        abortOnError false
+        disable 'VectorPath', 'NestedWeights', 'ContentDescription', 'SmallSp'
+    }
 }
 
 paranoid {
@@ -82,13 +87,9 @@ paranoid {
 }
 
 BlackObfuscator {
-    // 是否启用
-    enabled true
-    // 混淆深度
-    depth 2
-    // 需要混淆的包或者类(匹配前面一段)
+    enabled false
+    depth 1
     obfClass = ["com.editlike.app"]
-    // blackClass中的包或者类不会进行混淆(匹配前面一段)
     blackClass = ["com.theartofdev.edmodo.cropper"]
 }
 
@@ -99,6 +100,5 @@ dependencies {
     implementation 'com.arthenica:ffmpeg-kit-full:4.5.1-1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
-    implementation 'com.github.QuadFlask:colorpicker:0.0.15'
     implementation files ('libs/unity-ads.aar')
 }
