@@ -1,13 +1,10 @@
 package com.editlike.app;
 
 import android.Manifest;
-import android.R;
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.*;
 import android.os.Bundle;
@@ -15,15 +12,10 @@ import android.Manifest;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
-import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-import com.editlike.app.MainActivity;
-import com.editlike.app.TemplateActivity;
 import com.editlike.app.databinding.TemplateBinding;
 import io.michaelrocks.paranoid.Obfuscate;
-import java.util.ArrayList;
 
 @Obfuscate
 public class TemplateActivity extends AppCompatActivity {
