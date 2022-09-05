@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
   // Global float Variable, used to move tweetview(tweelayout.xml) with fingers
   private int lastAction;
   // Unity Ads Game Id (here changed for security reasons)
-  private String GameID = "4818027";
+  private String GameID = "0000000";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
