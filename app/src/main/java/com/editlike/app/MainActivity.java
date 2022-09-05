@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity
         TweetlayoutBinding.inflate(getLayoutInflater(), mainbinding.background, true);
 
     // EVERYTHING ON INITIALISE ~~
-    //
     if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE2")) {
       tweetlayoutbinding.container.setVisibility(View.GONE);
       mainbinding.featbutton.setVisibility(View.VISIBLE);

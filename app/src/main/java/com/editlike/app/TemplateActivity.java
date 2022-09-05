@@ -11,11 +11,13 @@ import android.os.Bundle;
 import android.Manifest;
 import android.view.*;
 import android.view.View.*;
+import android.content.ClipData;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import com.editlike.app.databinding.TemplateBinding;
 import io.michaelrocks.paranoid.Obfuscate;
+import java.util.ArrayList;
 
 @Obfuscate
 public class TemplateActivity extends AppCompatActivity {
@@ -131,20 +133,35 @@ public class TemplateActivity extends AppCompatActivity {
     switch (requestCode) {
       case REQ_CD_PICKVIDEO:
         if (resultCode == Activity.RESULT_OK) {
-          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            final Intent MainPage = new Intent();
-            MainPage.setClass(getApplicationContext(), MainActivity.class);
-            MainPage.putExtra("TEMPLATE", "TEMPLATE2");
-            MainPage.putExtra("VIDEOURI", data.getData().toString());
-            MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(MainPage);
-          } else {
-            final Intent PermissionPage = new Intent();
-            PermissionPage.setClass(getApplicationContext(), MainActivity.class);
-            PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
-            PermissionPage.putExtra("VIDEOURI", data.getData().toString());
-            PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(PermissionPage);
+          ArrayList<String> _filePath = new ArrayList<>();
+          if (data != null) {
+            if (data.getClipData() != null) {
+              for (int _index = 0; _index < data.getClipData().getItemCount(); _index++) {
+                ClipData.Item _item = data.getClipData().getItemAt(_index);
+                _filePath.add(
+                    FileUtil.convertUriToFilePath(getApplicationContext(), _item.getUri()));
+              }
+            } else {
+              _filePath.add(FileUtil.convertUriToFilePath(getApplicationContext(), data.getData()));
+            }
+          }
+          final String videopath = _filePath.get((int) (0));
+          if (videopath.endsWith(".mp4")) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+              final Intent MainPage = new Intent();
+              MainPage.setClass(getApplicationContext(), MainActivity.class);
+              MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+              MainPage.putExtra("VIDEOURI", data.getData().toString());
+              MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+              startActivity(MainPage);
+            } else {
+              final Intent PermissionPage = new Intent();
+              PermissionPage.setClass(getApplicationContext(), MainActivity.class);
+              PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
+              PermissionPage.putExtra("VIDEOURI", data.getData().toString());
+              PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+              startActivity(PermissionPage);
+            }
           }
         }
         break;
