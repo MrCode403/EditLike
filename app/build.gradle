@@ -23,19 +23,19 @@ android {
     
     signingConfigs {
          release {
-             storeFile file("EditLike.jks")
+             storeFile file("debug.jks")
              keyAlias 'EditLike'
-             keyPassword '##EditLike10102003'
-             storePassword '##EditLike10102003'
+             keyPassword 'd223VHWnWixBb52'
+             storePassword 'd223VHWnWixBb52'
              v1SigningEnabled true
              v2SigningEnabled true
              enableV3Signing = true
          } 
          debug {
-             storeFile file("EditLike.jks")
+             storeFile file("debug.jks")
              keyAlias 'EditLike'
-             keyPassword '##EditLike10102003'
-             storePassword '##EditLike10102003'
+             keyPassword 'd223VHWnWixBb52'
+             storePassword 'd223VHWnWixBb52'
              v1SigningEnabled true
              v2SigningEnabled true
              enableV3Signing = true
@@ -90,7 +90,6 @@ BlackObfuscator {
     enabled false
     depth 1
     obfClass = ["com.editlike.app"]
-    blackClass = ["com.theartofdev.edmodo.cropper"]
 }
 
 dependencies {
@@ -101,4 +100,9 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
     implementation files ('libs/unity-ads.aar')
+}
+
+configurations.implementation {
+    exclude group: 'androidx.viewpager', module: 'viewpager'
+    exclude group: 'androidx.viewpager2', module: 'viewpager2'
 }
