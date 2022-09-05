@@ -38,7 +38,7 @@ public class ExportActivity extends AppCompatActivity {
   private String exportvideopath;
   private String STARTTIME;
   private String ENDTIME;
-  private String PlacementID = "adplacementid";
+  private String PlacementID = "ExportBanner";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
