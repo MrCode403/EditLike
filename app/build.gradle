@@ -42,8 +42,6 @@ android {
          } 
     }
 
-          
-
     buildTypes {
         release {
             minifyEnabled true
@@ -79,19 +77,6 @@ android {
     }
 }
 
-paranoid {
-  enabled true
-  cacheable false
-  includeSubprojects false
-  obfuscationSeed null
-}
-
-BlackObfuscator {
-    enabled false
-    depth 1
-    obfClass = ["com.editlike.app"]
-}
-
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -105,4 +90,17 @@ dependencies {
 configurations.implementation {
     exclude group: 'androidx.viewpager', module: 'viewpager'
     exclude group: 'androidx.viewpager2', module: 'viewpager2'
+}
+
+paranoid {
+  enabled true
+  cacheable false
+  includeSubprojects false
+  obfuscationSeed null
+}
+
+BlackObfuscator {
+    enabled false
+    depth 1
+    obfClass = ["com.editlike.app"]
 }
