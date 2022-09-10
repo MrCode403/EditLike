@@ -1,6 +1,7 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="android:fontFamily">@font/robotoregularfont</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -11,6 +12,7 @@
     </style>
 
     <style name="AppTheme.FullScreen" parent="AppTheme">
+        <item name="android:fontFamily">@font/robotoregularfont</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:forceDarkAllowed">false</item>
