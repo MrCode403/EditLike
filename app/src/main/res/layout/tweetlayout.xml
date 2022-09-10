@@ -53,7 +53,7 @@
 					android:layout_weight="1">
 					<EditText
 						android:id="@+id/name"
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:paddingLeft="4dp"
 						android:paddingTop="4dp"
@@ -70,7 +70,7 @@
 						android:focusableInTouchMode="true" />
 					<EditText
 						android:id="@+id/username"
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:paddingLeft="4dp"
 						android:paddingTop="1dp"

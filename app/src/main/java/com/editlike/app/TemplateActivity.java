@@ -63,7 +63,6 @@ public class TemplateActivity extends AppCompatActivity {
     GradientDrawable gd001 =
         new GradientDrawable(
             GradientDrawable.Orientation.TOP_BOTTOM, new int[] {0xFF7289DA, 0xFF353c57});
-    gd001.setCornerRadius(0f);
     binding.base.setBackgroundDrawable(gd001);
   }
 

@@ -230,7 +230,6 @@ public class MainActivity extends AppCompatActivity
         new MediaPlayer.OnPreparedListener() {
           @Override
           public void onPrepared(MediaPlayer np) {
-
             mp = np;
           }
         });
@@ -259,14 +258,18 @@ public class MainActivity extends AppCompatActivity
   @Override
   public void onResume() {
     super.onResume();
-    tweetlayoutbinding.videoview1.setBackgroundColor(Color.TRANSPARENT);
-    if (tweetlayoutbinding.videoview1 != null) {
-      if (VIDEOTRIMMED) {
-        tweetlayoutbinding.videoview1.seekTo(Integer.parseInt(STARTTIMEinmillivar));
-        tweetlayoutbinding.videoview1.start();
-      } else {
-        tweetlayoutbinding.videoview1.start();
+    if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE1")) {
+      tweetlayoutbinding.videoview1.setBackgroundColor(Color.TRANSPARENT);
+      if (tweetlayoutbinding.videoview1 != null) {
+        if (VIDEOTRIMMED) {
+          tweetlayoutbinding.videoview1.seekTo(Integer.parseInt(STARTTIMEinmillivar));
+          tweetlayoutbinding.videoview1.start();
+        } else {
+          tweetlayoutbinding.videoview1.start();
+        }
       }
+    } else {
+      vidview.start();
     }
   }
 
@@ -274,7 +277,11 @@ public class MainActivity extends AppCompatActivity
   @Override
   public void onPause() {
     super.onPause();
-    tweetlayoutbinding.videoview1.pause();
+    if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE1")) {
+      tweetlayoutbinding.videoview1.pause();
+    } else {
+      vidview.pause();
+    }
   }
 
   // ON BACK BUTTON PRESSED
