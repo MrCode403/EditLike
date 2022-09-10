@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import android.graphics.Canvas;
 import android.graphics.*;
-import com.editlike.app.Utils.VideoFrameDecoderUtils;
+import com.editlike.app.Utils.VideoFrameDecoderUtil;
 import com.editlike.app.Interfaces.TrimTimelineViewListener;
 
 public class TrimTimelineView extends View {
@@ -53,7 +53,7 @@ public class TrimTimelineView extends View {
   public ArrayList<Bitmap> frames = new ArrayList<>();
   private VideoFrameDecoder currentTask;
   private static final Object sync = new Object();
-  VideoFrameDecoderUtils utils;
+  VideoFrameDecoderUtil utils;
 
   private TrimTimelineViewListener listener;
 
@@ -87,7 +87,7 @@ public class TrimTimelineView extends View {
 
   private void init(AttributeSet attrs) {
     density = getContext().getResources().getDisplayMetrics().density;
-    utils = new VideoFrameDecoderUtils();
+    utils = new VideoFrameDecoderUtil();
     paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     paint2 = new Paint();
     drawableLeft = getContext().getResources().getDrawable(R.drawable.video_cropleft);
@@ -509,7 +509,7 @@ public class TrimTimelineView extends View {
       this.utils = view.utils;
     }
 
-    private VideoFrameDecoderUtils utils;
+    private VideoFrameDecoderUtil utils;
     private VideoFrameDecoderListener listener;
     private MediaMetadataRetriever mediaMetadataRetriever;
 

@@ -25,4 +25,17 @@ public class Util {
     view.getLocationInWindow(location);
     return location[1];
   }
+
+  public static void showKeyboard(Context context) {
+    InputMethodManager inputMethodManager =
+        (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+  }
+
+  public static void hideKeyboard(Context context) {
+    InputMethodManager inputMethodManager =
+        (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+    inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+  }
 }
+
