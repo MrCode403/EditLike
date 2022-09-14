@@ -10,10 +10,14 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.io.*;
 
 public class FileUtil {
+
+  public static File file;
 
   private static void createNewFile(String path) {
     int lastSep = path.lastIndexOf(File.separator);
@@ -143,4 +147,33 @@ public class FileUtil {
     }
     return null;
   }
+
+  public static void writeFile(String path, String str) {
+    createNewFile(path);
+    FileWriter fileWriter = null;
+
+    try {
+      fileWriter = new FileWriter(new File(path), false);
+      fileWriter.write(str);
+      fileWriter.flush();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        if (fileWriter != null) fileWriter.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  public static void rename(String path, String to) {
+    new File(path)
+        .renameTo(new File(path.replace(Uri.parse(path).getLastPathSegment(), "").concat(to)));
+  }
+
+  public static String getPackageDataDir(Context context) {
+    return context.getExternalFilesDir(null).getAbsolutePath();
+  }
 }
+

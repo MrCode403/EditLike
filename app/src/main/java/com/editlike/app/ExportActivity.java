@@ -10,6 +10,9 @@ import com.arthenica.ffmpegkit.ReturnCode;
 import com.arthenica.ffmpegkit.FFmpegSession;
 import com.arthenica.ffmpegkit.FFmpegKit;
 import com.arthenica.ffmpegkit.FFmpegSessionCompleteCallback;
+import com.editlike.app.AppUtil;
+import com.editlike.app.FileUtil;
+import com.itsaky.androidide.logsender.LogSender;
 import io.michaelrocks.paranoid.Obfuscate;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -23,6 +26,8 @@ import android.view.ViewGroup;
 import com.unity3d.services.banners.IUnityBannerListener;
 import com.unity3d.services.banners.UnityBanners;
 import com.editlike.app.databinding.ExportBinding;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 @Obfuscate
 public class ExportActivity extends AppCompatActivity {
@@ -34,6 +39,7 @@ public class ExportActivity extends AppCompatActivity {
   private ContentValues values;
   private ParcelFileDescriptor pfd;
   private String cmd;
+  private String[] fixedcmd;
   private String exportvideoname;
   private String exportvideopath;
   private String STARTTIME;
@@ -43,10 +49,11 @@ public class ExportActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    LogSender.startLogging(this);
     binding = ExportBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-
-    final String videopath = getIntent().getStringExtra("VIDEOPATH");
+    
+    final String videopath = getIntent().getStringExtra("VIDEOPATH").replace(getIntent().getStringExtra("VIDEOFILENAME"), "'".concat(getIntent().getStringExtra("VIDEOFILENAME").concat("'")));
     final double videopositionY = Double.parseDouble(getIntent().getStringExtra("VIDEOPOSITIONY"));
     final double videoscalex = Double.parseDouble(getIntent().getStringExtra("VIDEOSCALEX"));
     final double videoscaley = Double.parseDouble(getIntent().getStringExtra("VIDEOSCALEY"));
@@ -76,12 +83,12 @@ public class ExportActivity extends AppCompatActivity {
 
           @Override
           public void onUnityBannerUnloaded(String s) {
-            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
 
           @Override
           public void onUnityBannerShow(String s) {
-            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
 
           @Override
@@ -91,12 +98,12 @@ public class ExportActivity extends AppCompatActivity {
 
           @Override
           public void onUnityBannerHide(String s) {
-            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
 
           @Override
           public void onUnityBannerError(String s) {
-            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
         };
     UnityBanners.setBannerListener(bannerListener);
@@ -107,6 +114,50 @@ public class ExportActivity extends AppCompatActivity {
     cal = Calendar.getInstance();
     exportvideoname = new SimpleDateFormat("yyyyMMddHHmmssSSSa").format(cal.getTime());
     exportvideopath = "/storage/emulated/0/Movies/EditLike/" + exportvideoname + ".mp4";
+
+    /*
+    if (STARTTIME != null && ENDTIME != null) {
+      cmd =
+          new String[] {
+            "-y -i /storage/emulated/0/DCIM/save.png -ss ",
+            STARTTIME,
+            " -to ",
+            ENDTIME,
+            " -i ",
+            videopath,
+            " -filter_complex \"[1:v]scale=",
+            String.valueOf(videoscalex),
+            ":",
+            String.valueOf(videoscaley),
+            "[vid]; [0:v]scale=",
+            String.valueOf(backgroundheight),
+            ":",
+            String.valueOf(backgroundwidth),
+            "[img]; [img][vid] overlay=(W-w)/2:y=",
+            String.valueOf(videopositionY),
+            "\" -b:v 3000k -maxrate 3000k ",
+            exportvideopath
+          };
+    } else {
+      cmd =
+          new String[] {
+            "-y -i /storage/emulated/0/DCIM/save.png -i ",
+            videopath,
+            " -filter_complex \"[1:v]scale=",
+            String.valueOf(videoscalex),
+            ":",
+            String.valueOf(videoscaley),
+            "[vid]; [0:v]scale=",
+            String.valueOf(backgroundheight),
+            ":",
+            String.valueOf(backgroundwidth),
+            "[img]; [img][vid] overlay=(W-w)/2:y=",
+            String.valueOf(videopositionY),
+            "\" -b:v 3000k -maxrate 3000k ",
+            exportvideopath,
+          };
+    }
+    */
 
     // FFMPEG COMMAND
     try {
@@ -297,8 +348,15 @@ public class ExportActivity extends AppCompatActivity {
                               } else {
                                 FileUtil.deleteFile("/storage/emulated/0/DCIM/save.png");
                                 FileUtil.deleteFile(exportvideopath);
+                                UnityBanners.destroy();
+                                FileUtil.writeFile(
+                                    FileUtil.getPackageDataDir(getApplicationContext())
+                                        .concat("FailLogsTree.txt"),
+                                    session.getAllLogs().toString());
                                 Toast.makeText(
-                                        getApplicationContext(), "FAILED", Toast.LENGTH_SHORT)
+                                        getApplicationContext(),
+                                        "Failed! See logs for more info",
+                                        Toast.LENGTH_SHORT)
                                     .show();
                                 finish();
                               }
@@ -308,7 +366,8 @@ public class ExportActivity extends AppCompatActivity {
                   })
               .getSessionId();
     } catch (Exception e) {
-
+      Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+      UnityBanners.destroy();
     }
 
     binding.sharebutton.setOnClickListener(
@@ -357,3 +416,4 @@ public class ExportActivity extends AppCompatActivity {
     finish();
   }
 }
+

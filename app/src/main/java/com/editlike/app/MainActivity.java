@@ -33,6 +33,7 @@ import com.editlike.app.databinding.MainBinding;
 import com.editlike.app.databinding.ToolbottombarBinding;
 import com.editlike.app.databinding.TweetlayoutBinding;
 import com.editlike.app.databinding.VideobottombarBinding;
+import com.itsaky.androidide.logsender.LogSender;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import com.unity3d.ads.UnityAds;
@@ -75,6 +76,8 @@ public class MainActivity extends AppCompatActivity
   private String ENDTIMEinmillivar = "";
   // Global String Variable, used to set video patch when picked from gallery
   private String videopath = "";
+  // Global String Variable, used to set picked video file name
+  private String videofilename = "";
   // Global String Variable, used to set the current xml showing in bottom bar
   public String BOTTOMBARLAYOUT = "";
   // Global double variable, used to know the current container height > changes on addfile clicked
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // APP LOGS GENERATOR (com.itsaky.androidide.logsender.LogSender)
-    // LogSender.startLogging(this);
+    LogSender.startLogging(this);
     // main.xml Binding
     mainbinding = MainBinding.inflate(getLayoutInflater());
     setContentView(mainbinding.getRoot());
@@ -387,6 +390,7 @@ public class MainActivity extends AppCompatActivity
           }
           // ON FILES PICKED
           videopath = _filePath.get((int) (0));
+          videofilename = Uri.parse(videopath).getLastPathSegment();
           Uri VIDEOURI = data.getData();
           // CHECK IF PATH(videopath) is a video file or not
           if (videopath.endsWith(".mp4")) {
@@ -600,6 +604,7 @@ public class MainActivity extends AppCompatActivity
       Intent EXPORTPAGE = new Intent();
       EXPORTPAGE.setClass(getApplicationContext(), ExportActivity.class);
       EXPORTPAGE.putExtra("VIDEOPATH", videopath);
+      EXPORTPAGE.putExtra("VIDEOFILENAME", videofilename);
       EXPORTPAGE.putExtra("VIDEOPOSITIONY", String.valueOf(videopositionY));
       EXPORTPAGE.putExtra("VIDEOSCALEX", String.valueOf(videoscalex));
       EXPORTPAGE.putExtra("VIDEOSCALEY", String.valueOf(videoscaley));

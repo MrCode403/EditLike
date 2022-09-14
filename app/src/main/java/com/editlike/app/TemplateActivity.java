@@ -15,7 +15,9 @@ import android.content.ClipData;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.editlike.app.PermissionsActivity;
 import com.editlike.app.databinding.TemplateBinding;
+import com.itsaky.androidide.logsender.LogSender;
 import io.michaelrocks.paranoid.Obfuscate;
 import java.util.ArrayList;
 
@@ -30,6 +32,7 @@ public class TemplateActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    LogSender.startLogging(this);
     binding = TemplateBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     binding.template1.setOnClickListener(
@@ -38,7 +41,11 @@ public class TemplateActivity extends AppCompatActivity {
           public void onClick(View view) {
             template1clicked = true;
             template2clicked = false;
-            Permission();
+            if (isStoragePermissionGranted()) {
+              onStorageAlreadyGranted();
+            } else {
+              onStorageDenied();
+            }
           }
         });
     binding.template2.setOnClickListener(
@@ -47,7 +54,11 @@ public class TemplateActivity extends AppCompatActivity {
           public void onClick(View view) {
             template2clicked = true;
             template1clicked = false;
-            Permission();
+            if (isStoragePermissionGranted()) {
+              onStorageAlreadyGranted();
+            } else {
+              onStorageDenied();
+            }
           }
         });
   }
@@ -71,58 +82,42 @@ public class TemplateActivity extends AppCompatActivity {
     finishAffinity();
   }
 
-  public void Permission() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      // IF ANDROID VERSION IS GREATER OR EQUAL TO ANDROID 10 (API 29) ~~
-      if (template1clicked) {
-        final Intent MainPage = new Intent();
-        MainPage.setClass(getApplicationContext(), MainActivity.class);
-        MainPage.putExtra("TEMPLATE", "TEMPLATE1");
-        MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(MainPage);
-      } else if (template2clicked) {
-        final Intent PICKVIDEO =
-            new Intent(
-                Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        PICKVIDEO.setType("video/*");
-        startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
-      }
-    } else {
-      // IF ANDROID VERSION IS LESS THAN ANDROID 9 (API 29) ~~
-      if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-              == PackageManager.PERMISSION_DENIED
-          || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-              == PackageManager.PERMISSION_DENIED) {
-        if (template1clicked) {
-          final Intent PermissionPage = new Intent();
-          PermissionPage.setClass(getApplicationContext(), MainActivity.class);
-          PermissionPage.putExtra("TEMPLATE", "TEMPLATE1");
-          PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(PermissionPage);
-        } else if (template2clicked) {
-          final Intent PICKVIDEO =
-              new Intent(
-                  Intent.ACTION_PICK,
-                  android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-          PICKVIDEO.setType("video/*");
-          startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
-        }
-      } else {
-        if (template1clicked) {
-          final Intent MainPage = new Intent();
-          MainPage.setClass(getApplicationContext(), MainActivity.class);
-          MainPage.putExtra("TEMPLATE", "TEMPLATE1");
-          MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-          startActivity(MainPage);
-        } else if (template2clicked) {
-          final Intent PICKVIDEO =
-              new Intent(
-                  Intent.ACTION_PICK,
-                  android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-          PICKVIDEO.setType("video/*");
-          startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
-        }
-      }
+  public boolean isStoragePermissionGranted() {
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_GRANTED
+        && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_GRANTED;
+  }
+
+  protected void onStorageAlreadyGranted() {
+    if (template1clicked) {
+      final Intent MainPage = new Intent();
+      MainPage.setClass(getApplicationContext(), MainActivity.class);
+      MainPage.putExtra("TEMPLATE", "TEMPLATE1");
+      MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+      startActivity(MainPage);
+    } else if (template2clicked) {
+      final Intent PICKVIDEO =
+          new Intent(
+              Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+      PICKVIDEO.setType("video/*");
+      startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
+    }
+  }
+
+  protected void onStorageDenied() {
+    if (template1clicked) {
+      final Intent MainPage = new Intent();
+      MainPage.setClass(getApplicationContext(), PermissionsActivity.class);
+      MainPage.putExtra("TEMPLATE", "TEMPLATE1");
+      MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+      startActivity(MainPage);
+    } else if (template2clicked) {
+      final Intent MainPage = new Intent();
+      MainPage.setClass(getApplicationContext(), PermissionsActivity.class);
+      MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+      MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+      startActivity(MainPage);
     }
   }
 
@@ -131,40 +126,12 @@ public class TemplateActivity extends AppCompatActivity {
     super.onActivityResult(requestCode, resultCode, data);
     switch (requestCode) {
       case REQ_CD_PICKVIDEO:
-        if (resultCode == Activity.RESULT_OK) {
-          ArrayList<String> _filePath = new ArrayList<>();
-          if (data != null) {
-            if (data.getClipData() != null) {
-              for (int _index = 0; _index < data.getClipData().getItemCount(); _index++) {
-                ClipData.Item _item = data.getClipData().getItemAt(_index);
-                _filePath.add(
-                    FileUtil.convertUriToFilePath(getApplicationContext(), _item.getUri()));
-              }
-            } else {
-              _filePath.add(FileUtil.convertUriToFilePath(getApplicationContext(), data.getData()));
-            }
-          }
-          final String videopath = _filePath.get((int) (0));
-          if (videopath.endsWith(".mp4")) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-              final Intent MainPage = new Intent();
-              MainPage.setClass(getApplicationContext(), MainActivity.class);
-              MainPage.putExtra("TEMPLATE", "TEMPLATE2");
-              MainPage.putExtra("VIDEOURI", data.getData().toString());
-              MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-              startActivity(MainPage);
-            } else {
-              final Intent PermissionPage = new Intent();
-              PermissionPage.setClass(getApplicationContext(), MainActivity.class);
-              PermissionPage.putExtra("TEMPLATE", "TEMPLATE2");
-              PermissionPage.putExtra("VIDEOURI", data.getData().toString());
-              PermissionPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-              startActivity(PermissionPage);
-            }
-          }
-        }
-        break;
-      default:
+        final Intent MainPage = new Intent();
+        MainPage.setClass(getApplicationContext(), MainActivity.class);
+        MainPage.putExtra("TEMPLATE", "TEMPLATE2");
+        MainPage.putExtra("VIDEOURI", data.getData().toString());
+        MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(MainPage);
         break;
     }
   }
