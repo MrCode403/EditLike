@@ -14,9 +14,9 @@
 			android:id="@+id/linear11"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:paddingLeft="14dp"
-			android:paddingTop="14dp"
-			android:paddingRight="14dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="15dp"
+			android:paddingRight="15dp"
 			android:paddingBottom="8dp"
 			android:gravity="right"
 			android:orientation="horizontal">
@@ -33,7 +33,7 @@
 			android:layout_height="match_parent"
 			android:gravity="center_horizontal|center_vertical"
 			android:orientation="vertical"
-			android:translationY="-8.0dp">
+			android:translationY="-4.0dp">
 			<LinearLayout
 				android:id="@+id/title"
 				android:layout_width="match_parent"
@@ -45,9 +45,6 @@
 					android:layout_width="135dp"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="2dp"
 					android:text="CHOOSE A\nTEMPLATE"
 					android:textSize="20sp"
 					android:textStyle="bold"
@@ -58,7 +55,7 @@
 					android:id="@+id/imageview3"
 					android:layout_width="30dp"
 					android:layout_height="50dp"
-					android:padding="15dp"
+					android:padding="14dp"
 					android:src="@drawable/rightwhiteicon"
 					android:scaleType="centerCrop"
 					android:layout_gravity="center_horizontal|center_vertical" />
@@ -77,11 +74,11 @@
 					android:paddingLeft="8dp"
 					android:paddingTop="2dp"
 					android:paddingRight="8dp"
-					android:text="Lets create something awesome"
-					android:textSize="12sp"
+					android:text="Lets Create Something Awesome"
+					android:textSize="13sp"
 					android:textColor="#FFFFFF"
 					android:fontFamily="@font/josefinsansfont"
-					android:lineSpacingExtra="0.5dp" />
+					android:letterSpacing="-0.06" />
 			</LinearLayout>
 			<HorizontalScrollView
 				android:id="@+id/hscroll1"

@@ -66,6 +66,7 @@
 						android:hint="YOUR NAME"
 						android:textColorHint="#000000"
 						android:lines="1"
+						android:letterSpacing="0.02"
 						android:cursorVisible="false"
 						android:focusableInTouchMode="true" />
 					<EditText
@@ -103,6 +104,7 @@
 				android:textColor="#000000"
 				android:hint="Write description here"
 				android:textColorHint="#000000"
+				android:letterSpacing="0.02"
 				android:cursorVisible="false"
 				android:focusableInTouchMode="true" />
 			<LinearLayout
