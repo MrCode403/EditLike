@@ -10,9 +10,6 @@ import com.arthenica.ffmpegkit.ReturnCode;
 import com.arthenica.ffmpegkit.FFmpegSession;
 import com.arthenica.ffmpegkit.FFmpegKit;
 import com.arthenica.ffmpegkit.FFmpegSessionCompleteCallback;
-import com.editlike.app.AppUtil;
-import com.editlike.app.FileUtil;
-import com.itsaky.androidide.logsender.LogSender;
 import io.michaelrocks.paranoid.Obfuscate;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -26,8 +23,6 @@ import android.view.ViewGroup;
 import com.unity3d.services.banners.IUnityBannerListener;
 import com.unity3d.services.banners.UnityBanners;
 import com.editlike.app.databinding.ExportBinding;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 @Obfuscate
 public class ExportActivity extends AppCompatActivity {
@@ -49,7 +44,7 @@ public class ExportActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    LogSender.startLogging(this);
+    // LogSender.startLogging(this);
     binding = ExportBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     

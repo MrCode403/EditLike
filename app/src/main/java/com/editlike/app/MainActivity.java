@@ -33,7 +33,6 @@ import com.editlike.app.databinding.MainBinding;
 import com.editlike.app.databinding.ToolbottombarBinding;
 import com.editlike.app.databinding.TweetlayoutBinding;
 import com.editlike.app.databinding.VideobottombarBinding;
-import com.itsaky.androidide.logsender.LogSender;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import com.unity3d.ads.UnityAds;
@@ -113,7 +112,7 @@ public class MainActivity extends AppCompatActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // APP LOGS GENERATOR (com.itsaky.androidide.logsender.LogSender)
-    LogSender.startLogging(this);
+    // LogSender.startLogging(this);
     // main.xml Binding
     mainbinding = MainBinding.inflate(getLayoutInflater());
     setContentView(mainbinding.getRoot());

@@ -1,7 +1,6 @@
 package com.editlike.app;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -11,15 +10,11 @@ import android.os.Bundle;
 import android.Manifest;
 import android.view.*;
 import android.view.View.*;
-import android.content.ClipData;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import com.editlike.app.PermissionsActivity;
 import com.editlike.app.databinding.TemplateBinding;
-import com.itsaky.androidide.logsender.LogSender;
 import io.michaelrocks.paranoid.Obfuscate;
-import java.util.ArrayList;
 
 @Obfuscate
 public class TemplateActivity extends AppCompatActivity {
@@ -32,7 +27,7 @@ public class TemplateActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    LogSender.startLogging(this);
+    // LogSender.startLogging(this);
     binding = TemplateBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     binding.template1.setOnClickListener(
