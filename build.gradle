@@ -2,7 +2,7 @@ buildscript {
     project.ext {
         appId = "com.editlike.app"
         minSdk = 24
-        targetSdk = 32
+        targetSdk = 33
     }
     dependencies {
         classpath 'io.michaelrocks:paranoid-gradle-plugin:0.3.7'
