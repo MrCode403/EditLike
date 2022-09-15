@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">Edit Like</string>
-    <string name="color_chooser_dialog_title"><font fgcolor="#FF7289DA">PICK COLOUR</font></string>
 </resources>

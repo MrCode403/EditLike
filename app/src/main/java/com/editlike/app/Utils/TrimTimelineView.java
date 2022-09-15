@@ -1,5 +1,6 @@
 package com.editlike.app.Utils;
 
+import androidx.core.content.res.ResourcesCompat;
 import com.editlike.app.*;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -90,8 +91,12 @@ public class TrimTimelineView extends View {
     utils = new VideoFrameDecoderUtil();
     paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     paint2 = new Paint();
-    drawableLeft = getContext().getResources().getDrawable(R.drawable.video_cropleft);
-    drawableRight = getContext().getResources().getDrawable(R.drawable.video_cropright);
+    drawableLeft =
+        ResourcesCompat.getDrawable(
+            getContext().getResources(), R.drawable.video_cropleft, getContext().getTheme());
+    drawableRight =
+        ResourcesCompat.getDrawable(
+            getContext().getResources(), R.drawable.video_cropright, getContext().getTheme());
 
     int color = Color.WHITE;
     int iconColor = Color.WHITE;
