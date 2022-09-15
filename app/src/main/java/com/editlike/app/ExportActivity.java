@@ -34,7 +34,6 @@ public class ExportActivity extends AppCompatActivity {
   private ContentValues values;
   private ParcelFileDescriptor pfd;
   private String cmd;
-  private String[] fixedcmd;
   private String exportvideoname;
   private String exportvideopath;
   private String STARTTIME;
@@ -109,50 +108,6 @@ public class ExportActivity extends AppCompatActivity {
     cal = Calendar.getInstance();
     exportvideoname = new SimpleDateFormat("yyyyMMddHHmmssSSSa").format(cal.getTime());
     exportvideopath = "/storage/emulated/0/Movies/EditLike/" + exportvideoname + ".mp4";
-
-    /*
-    if (STARTTIME != null && ENDTIME != null) {
-      cmd =
-          new String[] {
-            "-y -i /storage/emulated/0/DCIM/save.png -ss ",
-            STARTTIME,
-            " -to ",
-            ENDTIME,
-            " -i ",
-            videopath,
-            " -filter_complex \"[1:v]scale=",
-            String.valueOf(videoscalex),
-            ":",
-            String.valueOf(videoscaley),
-            "[vid]; [0:v]scale=",
-            String.valueOf(backgroundheight),
-            ":",
-            String.valueOf(backgroundwidth),
-            "[img]; [img][vid] overlay=(W-w)/2:y=",
-            String.valueOf(videopositionY),
-            "\" -b:v 3000k -maxrate 3000k ",
-            exportvideopath
-          };
-    } else {
-      cmd =
-          new String[] {
-            "-y -i /storage/emulated/0/DCIM/save.png -i ",
-            videopath,
-            " -filter_complex \"[1:v]scale=",
-            String.valueOf(videoscalex),
-            ":",
-            String.valueOf(videoscaley),
-            "[vid]; [0:v]scale=",
-            String.valueOf(backgroundheight),
-            ":",
-            String.valueOf(backgroundwidth),
-            "[img]; [img][vid] overlay=(W-w)/2:y=",
-            String.valueOf(videopositionY),
-            "\" -b:v 3000k -maxrate 3000k ",
-            exportvideopath,
-          };
-    }
-    */
 
     // FFMPEG COMMAND
     try {
