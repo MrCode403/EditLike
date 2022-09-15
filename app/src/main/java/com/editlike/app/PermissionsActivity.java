@@ -13,6 +13,7 @@ import android.view.View.*;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.editlike.app.databinding.PermissionsBinding;
 import androidx.annotation.NonNull;
 
@@ -34,6 +35,14 @@ public class PermissionsActivity extends AppCompatActivity {
             requestStorage();
           }
         });
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    if (isStoragePermissionGranted()) {
+      onStorageGranted();
+    }
   }
 
   protected void requestStorage() {
@@ -94,6 +103,13 @@ public class PermissionsActivity extends AppCompatActivity {
         startActivity(MainPage);
         break;
     }
+  }
+
+  protected boolean isStoragePermissionGranted() {
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_GRANTED
+        && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_GRANTED;
   }
 }
 
