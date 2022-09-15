@@ -64,8 +64,8 @@ public class PermissionsActivity extends AppCompatActivity {
     } else if (getIntent().getStringExtra("TEMPLATE").equals("TEMPLATE2")) {
       final Intent PICKVIDEO =
           new Intent(
-              Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-      PICKVIDEO.setType("video/*");
+              Intent.ACTION_PICK);
+      PICKVIDEO.setDataAndType(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "video/*");
       startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
     }
   }

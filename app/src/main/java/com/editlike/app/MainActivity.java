@@ -515,58 +515,58 @@ public class MainActivity extends AppCompatActivity
   @Override
   public void onClick(View view) {
     switch (view.getId()) {
-      case R.id.savefab:
+      case (R.id.savefab):
         savefabOnClicked();
         break;
-      case R.id.name:
+      case (R.id.name):
         nameOnClicked();
         break;
-      case R.id.addfile:
+      case (R.id.addfile):
         addfileOnClicked();
         break;
-      case R.id.profilephoto:
+      case (R.id.profilephoto):
         profilephotoOnClicked();
         break;
-      case R.id.expandfab:
+      case (R.id.expandfab):
         expandfabOnClicked();
         break;
-      case R.id.toolbarbutton:
+      case (R.id.toolbarbutton):
         toolbarbuttonOnClicked();
         break;
-      case R.id.videobutton:
+      case (R.id.videobutton):
         videobuttonOnClicked();
         break;
-      case R.id.featbutton:
+      case (R.id.featbutton):
         featbuttonOnClicked();
         break;
-      case R.id.showhidetoolbar:
+      case (R.id.showhidetoolbar):
         showhidetoolbarOnClicked();
         break;
-      case R.id.showhide3dot:
+      case (R.id.showhide3dot):
         showhide3dotOnClicked();
         break;
-      case R.id.showhidestatusbar:
+      case (R.id.showhidestatusbar):
         showhidestatusbarOnClicked();
         break;
-      case R.id.showhidedescriptionbutton:
+      case (R.id.showhidedescriptionbutton):
         showhidedescriptionbuttonOnClicked();
         break;
-      case R.id.trimbutton:
+      case (R.id.trimbutton):
         trimbuttonOnClicked();
         break;
-      case R.id.videosizebutton:
+      case (R.id.videosizebutton):
         videosizebuttonOnClicked();
         break;
-      case R.id.replacebutton:
+      case (R.id.replacebutton):
         replacebuttonOnClicked();
         break;
-      case R.id.soundbutton:
+      case (R.id.soundbutton):
         soundbuttonOnClicked();
         break;
-      case R.id.movebutton:
+      case (R.id.movebutton):
         movebuttonOnClicked();
         break;
-      case R.id.tweetviewresizebutton:
+      case (R.id.tweetviewresizebutton):
         tweetviewresizebuttonOnClicked();
         break;
     }
@@ -575,13 +575,13 @@ public class MainActivity extends AppCompatActivity
   @Override
   public void onFocusChange(View view, boolean hasFocus) {
     switch (view.getId()) {
-      case R.id.username:
+      case (R.id.username):
         usernameOnFocusChanged(hasFocus);
         break;
-      case R.id.name:
+      case (R.id.name):
         nameOnFocusChanged(hasFocus);
         break;
-      case R.id.description:
+      case (R.id.description):
         descriptionOnFocusChanged(hasFocus);
         break;
     }
@@ -631,18 +631,16 @@ public class MainActivity extends AppCompatActivity
   public void addfileOnClicked() {
     containerheight = tweetlayoutbinding.container.getHeight();
     containerwidth = tweetlayoutbinding.container.getWidth();
-    Intent PICKVIDEO =
-        new Intent(
-            Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-    PICKVIDEO.setType("video/*");
+    Intent PICKVIDEO = new Intent(Intent.ACTION_PICK);
+    PICKVIDEO.setDataAndType(
+        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "video/*");
     startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
   }
 
   public void profilephotoOnClicked() {
-    Intent PICKPROFILEPHOTO =
-        new Intent(
-            Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-    PICKPROFILEPHOTO.setType("image/*");
+    Intent PICKPROFILEPHOTO = new Intent(Intent.ACTION_PICK);
+    PICKPROFILEPHOTO.setDataAndType(
+        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
     startActivityForResult(PICKPROFILEPHOTO, REQ_CD_PICKPROFILEPHOTO);
   }
 
@@ -722,10 +720,9 @@ public class MainActivity extends AppCompatActivity
   }
 
   public void replacebuttonOnClicked() {
-    Intent REPLACEVIDEO =
-        new Intent(
-            Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-    REPLACEVIDEO.setType("video/*");
+    Intent REPLACEVIDEO = new Intent(Intent.ACTION_PICK);
+    REPLACEVIDEO.setDataAndType(
+        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "video/*");
     startActivityForResult(REPLACEVIDEO, REQ_CD_PICKVIDEO);
   }
 

@@ -92,10 +92,9 @@ public class TemplateActivity extends AppCompatActivity {
       MainPage.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
       startActivity(MainPage);
     } else if (template2clicked) {
-      final Intent PICKVIDEO =
-          new Intent(
-              Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-      PICKVIDEO.setType("video/*");
+      final Intent PICKVIDEO = new Intent(Intent.ACTION_PICK);
+      PICKVIDEO.setDataAndType(
+          android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "video/*");
       startActivityForResult(PICKVIDEO, REQ_CD_PICKVIDEO);
     }
   }
