@@ -106,7 +106,7 @@
 						<androidx.cardview.widget.CardView
 							android:id="@+id/linear6"
 							android:layout_width="180dp"
-							android:layout_height="260dp"
+							android:layout_height="match_parent"
 							android:background="#7289DA"
 							android:gravity="center_horizontal|center_vertical"
 							android:orientation="vertical"
