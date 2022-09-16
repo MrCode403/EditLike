@@ -22,8 +22,7 @@
 				android:layout_height="match_parent"
 				android:background="#FFFFFF"
 				android:gravity="center_horizontal|center_vertical"
-				android:orientation="vertical"
-				android:layout_weight="1" />
+				android:orientation="vertical" />
 			<LinearLayout
 				android:id="@+id/bottombackground"
 				android:layout_width="match_parent"
@@ -31,16 +30,17 @@
 				android:background="@android:color/transparent"
 				android:gravity="center_horizontal|bottom"
 				android:orientation="vertical"
-				android:layout_weight="1"
 				android:layout_alignBottom="@id/background"
-				android:visibility="gone">
+				android:visibility="gone"
+				android:baselineAligned="false">
 				<LinearLayout
 					android:id="@+id/bottommainbar"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:background="@android:color/transparent"
 					android:gravity="center_horizontal|center_vertical"
-					android:orientation="vertical">
+					android:orientation="vertical"
+					android:baselineAligned="false">
 					<LinearLayout
 						android:id="@+id/bottombar"
 						android:layout_width="match_parent"
@@ -48,7 +48,8 @@
 						android:padding="8dp"
 						android:background="#7289DA"
 						android:gravity="center_horizontal"
-						android:orientation="horizontal">
+						android:orientation="horizontal"
+						android:baselineAligned="false">
 						<LinearLayout
 							android:id="@+id/toolbarbutton"
 							android:layout_width="wrap_content"
