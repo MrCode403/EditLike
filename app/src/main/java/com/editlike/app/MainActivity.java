@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity
           @Override
           public void onPrepared(MediaPlayer np) {
             mp = np;
+            tweetlayoutbinding.videoview1.start();
           }
         });
 
@@ -392,11 +393,11 @@ public class MainActivity extends AppCompatActivity
           videofilename = Uri.parse(videopath).getLastPathSegment();
           Uri VIDEOURI = data.getData();
           // CHECK IF PATH(videopath) is a video file or not
-          if (videopath.endsWith(".mp4")) {
+          if (!videopath.endsWith(".jpg") || !videopath.endsWith(".png")) {
             tweetlayoutbinding.videoview1.setVideoURI(VIDEOURI);
             tweetlayoutbinding.addfile.setVisibility(View.GONE);
             tweetlayoutbinding.videoview1.setVisibility(View.VISIBLE);
-            tweetlayoutbinding.videoview1.start();
+            // tweetlayoutbinding.videoview1.start();
             // TrimView.setVideoPath(videopath);
             videobinding.videosizeseekbar.setMax((int) containerwidth);
             tweetlayoutbinding.container.getLayoutParams().width =
