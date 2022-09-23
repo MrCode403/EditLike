@@ -93,7 +93,7 @@ configurations.implementation {
 }
 
 paranoid {
-  enabled true
+  enabled false
   cacheable false
   includeSubprojects false
   obfuscationSeed null

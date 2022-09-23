@@ -47,7 +47,7 @@ public class ExportActivity extends AppCompatActivity {
     binding = ExportBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     
-    final String videopath = getIntent().getStringExtra("VIDEOPATH").replace(getIntent().getStringExtra("VIDEOFILENAME"), "'".concat(getIntent().getStringExtra("VIDEOFILENAME").concat("'")));
+    final String videopath = getIntent().getStringExtra("VIDEOPATH");
     final double videopositionY = Double.parseDouble(getIntent().getStringExtra("VIDEOPOSITIONY"));
     final double videoscalex = Double.parseDouble(getIntent().getStringExtra("VIDEOSCALEX"));
     final double videoscaley = Double.parseDouble(getIntent().getStringExtra("VIDEOSCALEY"));
@@ -77,12 +77,12 @@ public class ExportActivity extends AppCompatActivity {
 
           @Override
           public void onUnityBannerUnloaded(String s) {
-            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
 
           @Override
           public void onUnityBannerShow(String s) {
-            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
 
           @Override
@@ -92,12 +92,12 @@ public class ExportActivity extends AppCompatActivity {
 
           @Override
           public void onUnityBannerHide(String s) {
-            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
 
           @Override
           public void onUnityBannerError(String s) {
-            // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
           }
         };
     UnityBanners.setBannerListener(bannerListener);
