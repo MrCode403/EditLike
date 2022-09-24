@@ -551,4 +551,18 @@ public class TrimTimelineView extends View {
       }
     }
   }
+  
+  public static String ReadableDurationString(double num) {
+    long timeInMillisecond = Long.valueOf((int) num);
+    return String.format(
+        Locale.US,
+        "%02d:%02d:%02d.%02d",
+        java.util.concurrent.TimeUnit.MILLISECONDS.toHours(timeInMillisecond),
+        java.util.concurrent.TimeUnit.MILLISECONDS.toMinutes(timeInMillisecond)
+            % java.util.concurrent.TimeUnit.HOURS.toMinutes(1),
+        java.util.concurrent.TimeUnit.MILLISECONDS.toSeconds(timeInMillisecond)
+            % java.util.concurrent.TimeUnit.MINUTES.toSeconds(1),
+        java.util.concurrent.TimeUnit.MILLISECONDS.toMillis(timeInMillisecond)
+            % java.util.concurrent.TimeUnit.SECONDS.toMillis(1));
+  }
 }

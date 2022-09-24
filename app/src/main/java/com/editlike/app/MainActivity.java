@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity
         new TrimTimelineViewListener() {
           @Override
           public void onLeftProgressChanged(float progress) {
-            STARTTIMEvar = ReadableDurationString((int) progress);
+            STARTTIMEvar = TrimTimelineView.ReadableDurationString((int) progress);
             STARTTIMEinmillivar = Float.toString(progress).replace(".0", "");
             tweetlayoutbinding.videoview1.seekTo(
                 Integer.parseInt(Float.toString(progress).replace(".0", "")));
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity
 
           @Override
           public void onRightProgressChanged(float progress) {
-            ENDTIMEvar = ReadableDurationString((int) progress);
+            ENDTIMEvar = TrimTimelineView.ReadableDurationString((int) progress);
             ENDTIMEinmillivar = Float.toString(progress).replace(".0", "");
             VIDEOTRIMMED = true;
             HANDLESTOP();
@@ -481,20 +481,6 @@ public class MainActivity extends AppCompatActivity
           }
         };
     timer1.scheduleAtFixedRate(settimer1, (int) (0), (int) (100));
-  }
-
-  public String ReadableDurationString(double num) {
-    long timeInMillisecond = Long.valueOf((int) num);
-    return String.format(
-        Locale.US,
-        "%02d:%02d:%02d.%02d",
-        java.util.concurrent.TimeUnit.MILLISECONDS.toHours(timeInMillisecond),
-        java.util.concurrent.TimeUnit.MILLISECONDS.toMinutes(timeInMillisecond)
-            % java.util.concurrent.TimeUnit.HOURS.toMinutes(1),
-        java.util.concurrent.TimeUnit.MILLISECONDS.toSeconds(timeInMillisecond)
-            % java.util.concurrent.TimeUnit.MINUTES.toSeconds(1),
-        java.util.concurrent.TimeUnit.MILLISECONDS.toMillis(timeInMillisecond)
-            % java.util.concurrent.TimeUnit.SECONDS.toMillis(1));
   }
 
   @Override
