@@ -85,4 +85,9 @@ public class AppUtil {
     } catch (Exception e) {
     }
   }
+
+  public static void ChangeViewSize(final View view, final double w) {
+    view.getLayoutParams().width = (int) w;
+    view.requestLayout();
+  }
 }

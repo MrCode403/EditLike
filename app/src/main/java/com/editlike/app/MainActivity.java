@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity
           @Override
           public void onProgressChanged(SeekBar _param1, int _param2, boolean _param3) {
             final int progressValue = _param2;
-            ChangeViewSize(tweetlayoutbinding.videoview1, progressValue);
+            AppUtil.ChangeViewSize(tweetlayoutbinding.videoview1, progressValue);
           }
 
           @Override
@@ -427,36 +427,6 @@ public class MainActivity extends AppCompatActivity
         BOTTOMBARLAYOUT = "BOTTOMBAR";
       }
     }
-  }
-
-  // DEFINING CHANGEVIEWSIZE
-  public void ChangeViewSize(final View view, final double w) {
-    view.getLayoutParams().width = (int) w;
-    view.requestLayout();
-  }
-
-  // SET TIME AND DATE
-  public void SETTIMEANDDATE() {
-    Timer timer = new Timer();
-    TimerTask settimer;
-    settimer =
-        new TimerTask() {
-          @Override
-          public void run() {
-            runOnUiThread(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    Calendar cal = Calendar.getInstance();
-                    tweetlayoutbinding.time.setText(
-                        new SimpleDateFormat("hh:mm a").format(cal.getTime()));
-                    tweetlayoutbinding.date.setText(
-                        new SimpleDateFormat("dd MMM yy").format(cal.getTime()) + " •");
-                  }
-                });
-          }
-        };
-    timer.scheduleAtFixedRate(settimer, (int) (0), (int) (1000));
   }
 
   public void HANDLESTOP() {
