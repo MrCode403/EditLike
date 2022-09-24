@@ -336,22 +336,6 @@ public class MainActivity extends AppCompatActivity
     }
   }
 
-  // DEFINING VIEWTOIMAGE TO SAVE VIEWS AS IMAGES
-  public void viewToImage(final View view, final String _storage_place) {
-    view.destroyDrawingCache();
-    view.setDrawingCacheEnabled(true);
-    Bitmap b = view.getDrawingCache();
-    try {
-      java.io.File file = new java.io.File(_storage_place);
-      java.io.OutputStream out = new java.io.FileOutputStream(file);
-      b.compress(Bitmap.CompressFormat.PNG, 100, out);
-      out.flush();
-      out.close();
-      tweetlayoutbinding.videoview1.setBackgroundColor(Color.TRANSPARENT);
-    } catch (Exception e) {
-    }
-  }
-
   // FILES PICKED ONACTIVITYRESULT
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -600,7 +584,10 @@ public class MainActivity extends AppCompatActivity
     if (!(videopath.length() == 0)) {
       FileUtil.deleteFile("/storage/emulated/0/DCIM/save.png");
       tweetlayoutbinding.videoview1.setBackgroundColor(0xFFFFFFFF);
-      viewToImage(mainbinding.background, "/storage/emulated/0/DCIM/save.png");
+      AppUtil.viewToImage(
+          mainbinding.background,
+          tweetlayoutbinding.videoview1,
+          "/storage/emulated/0/DCIM/save.png");
       Intent EXPORTPAGE = new Intent();
       EXPORTPAGE.setClass(getApplicationContext(), ExportActivity.class);
       EXPORTPAGE.putExtra("VIDEOPATH", videopath);
@@ -821,4 +808,3 @@ public class MainActivity extends AppCompatActivity
   @Override
   public void onStopTrackingTouch(SeekBar seekbar) {}
 }
-

@@ -2,6 +2,8 @@ package com.editlike.app;
 
 import android.app.*;
 import android.content.*;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.*;
 import android.net.*;
 import android.util.*;
@@ -44,7 +46,7 @@ public class AppUtil {
         (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
     inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
   }
-  
+
   public static void TimeAndDate(TextView view, TextView view1) {
     Timer timer = new Timer();
     TimerTask settimer;
@@ -67,5 +69,20 @@ public class AppUtil {
         };
     timer.scheduleAtFixedRate(settimer, (int) (0), (int) (1000));
   }
-}
 
+  public static void viewToImage(
+      final View view, final VideoView videoview, final String _storage_place) {
+    view.destroyDrawingCache();
+    view.setDrawingCacheEnabled(true);
+    Bitmap b = view.getDrawingCache();
+    try {
+      java.io.File file = new java.io.File(_storage_place);
+      java.io.OutputStream out = new java.io.FileOutputStream(file);
+      b.compress(Bitmap.CompressFormat.PNG, 100, out);
+      out.flush();
+      out.close();
+      videoview.setBackgroundColor(Color.TRANSPARENT);
+    } catch (Exception e) {
+    }
+  }
+}
