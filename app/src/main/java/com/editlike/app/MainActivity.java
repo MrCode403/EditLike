@@ -24,10 +24,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
+import com.editlike.app.AppUtil;
 import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.editlike.app.Interfaces.TrimTimelineViewListener;
-import com.editlike.app.Utils.TrimTimelineView;
+import com.editlike.app.TrimTimelineView;
 import com.editlike.app.databinding.FeatbottombarBinding;
 import com.editlike.app.databinding.MainBinding;
 import com.editlike.app.databinding.ToolbottombarBinding;
@@ -36,6 +37,7 @@ import com.editlike.app.databinding.VideobottombarBinding;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import com.unity3d.ads.UnityAds;
+import com.unity3d.scar.adapter.common.Utils;
 import de.hdodenhof.circleimageview.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -155,10 +157,8 @@ public class MainActivity extends AppCompatActivity
     tweetlayoutbinding.videoview1.setMediaController(null);
     // Initialise Unity Ads to be used in ExportActivity
     UnityAds.initialize(this, GameID, false);
-
     // SET TIME AND DATE ~~
-    SETTIMEANDDATE();
-
+    AppUtil.TimeAndDate(tweetlayoutbinding.time, tweetlayoutbinding.date);
     // VIDEO TRIM VIEW ~~
     TrimView = new TrimTimelineView(this);
     videobinding.trimbarview.addView(TrimView);

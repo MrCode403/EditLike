@@ -1,10 +1,10 @@
-package com.editlike.app.Utils;
+package com.editlike.app;
 
 import com.editlike.app.*;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import com.editlike.app.Utils.TrimTimelineView;
+import com.editlike.app.TrimTimelineView;
 
 public class VideoFrameDecoderUtil {
 

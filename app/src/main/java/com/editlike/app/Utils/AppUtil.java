@@ -8,7 +8,14 @@ import android.util.*;
 import android.view.*;
 import android.view.inputmethod.*;
 import android.widget.*;
-
+import android.os.Looper;
+import android.os.Handler;
+import android.view.View;
+import android.widget.TextView;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.io.*;
 import java.util.*;
 
@@ -36,6 +43,29 @@ public class AppUtil {
     InputMethodManager inputMethodManager =
         (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
     inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+  }
+  
+  public static void TimeAndDate(TextView view, TextView view1) {
+    Timer timer = new Timer();
+    TimerTask settimer;
+    settimer =
+        new TimerTask() {
+          @Override
+          public void run() {
+            new Handler(Looper.getMainLooper())
+                .post(
+                    new Runnable() {
+                      @Override
+                      public void run() {
+                        Calendar cal = Calendar.getInstance();
+                        view.setText(new SimpleDateFormat("hh:mm a").format(cal.getTime()));
+                        view1.setText(
+                            new SimpleDateFormat("dd MMM yy").format(cal.getTime()) + " •");
+                      }
+                    });
+          }
+        };
+    timer.scheduleAtFixedRate(settimer, (int) (0), (int) (1000));
   }
 }
 

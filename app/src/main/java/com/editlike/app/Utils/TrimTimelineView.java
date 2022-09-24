@@ -1,4 +1,4 @@
-package com.editlike.app.Utils;
+package com.editlike.app;
 
 import androidx.core.content.res.ResourcesCompat;
 import com.editlike.app.*;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import android.graphics.Canvas;
 import android.graphics.*;
-import com.editlike.app.Utils.VideoFrameDecoderUtil;
+import com.editlike.app.VideoFrameDecoderUtil;
 import com.editlike.app.Interfaces.TrimTimelineViewListener;
 
 public class TrimTimelineView extends View {
