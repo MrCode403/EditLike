@@ -7,7 +7,6 @@ buildscript {
     dependencies {
         classpath 'io.michaelrocks:paranoid-gradle-plugin:0.3.7'
         classpath "com.github.CodingGay:BlackObfuscator-ASPlugin:3.7"
-        classpath 'com.adarshr:gradle-test-logger-plugin:3.2.0'
     }
 }        
 
