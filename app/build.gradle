@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'io.michaelrocks.paranoid'
     id 'top.niunaijun.blackobfuscator'
+    id 'com.adarshr.test-logger'
 }
 
 
