@@ -30,17 +30,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       
-  -name: Setup Ndk
-  - uses: actions/checkout@v2
-  - uses: nttld/setup-ndk@v1
-    id: setup-ndk
-    with:
-      ndk-version: 24.0.8215888
-      add-to-path: false
-  - run: ./build.sh
-    env:
-      ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-
       - name: Build debug apk
         uses: eskatos/gradle-command-action@v1
         with:
