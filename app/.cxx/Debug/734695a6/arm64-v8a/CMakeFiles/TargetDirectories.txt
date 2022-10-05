@@ -1,0 +1,2 @@
+/storage/emulated/0/AndroidIDEProjects/EditLike/app/.cxx/Debug/734695a6/arm64-v8a/CMakeFiles/edit_cache.dir
+/storage/emulated/0/AndroidIDEProjects/EditLike/app/.cxx/Debug/734695a6/arm64-v8a/CMakeFiles/rebuild_cache.dir
