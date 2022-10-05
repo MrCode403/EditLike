@@ -7,6 +7,7 @@ plugins {
 
 android {
     compileSdk 32
+    ndkVersion "24.0.8215888"
     
     defaultConfig {
         applicationId rootProject.ext.appId
@@ -66,6 +67,13 @@ android {
 		sourceCompatibility JavaVersion.VERSION_11
 		targetCompatibility JavaVersion.VERSION_11
 	}
+    
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.23.1'
+        }
+    }
 	
 	buildFeatures {
         viewBinding true
