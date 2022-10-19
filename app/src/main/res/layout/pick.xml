@@ -1,0 +1,78 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:background="#212121"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical">
+		<TextView
+			android:id="@+id/textview1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:padding="8dp"
+			android:text="PASTE INSTAGRAM REEL/PHOTO URL TO ADD AS STORIES"
+              android:textSize="50sp"
+			android:textStyle="bold"
+			android:textColor="#BDBDBD" />
+		<LinearLayout
+			android:id="@+id/linear2"
+			android:layout_width="match_parent"
+			android:layout_height="45dp"
+			android:layout_marginLeft="22dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginRight="22dp"
+			android:paddingLeft="12dp"
+			android:paddingTop="4dp"
+			android:paddingRight="12dp"
+			android:paddingBottom="4dp"
+			android:gravity="center_horizontal"
+			android:orientation="horizontal"
+			android:background="@drawable/urlboxui">
+			<EditText
+				android:id="@+id/edittext1"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@android:color/transparent"
+				android:gravity="center_horizontal|center_vertical"
+				android:textSize="16sp"
+				android:textColor="#FFFFFF"
+				android:hint="Paste Instagram reel/photo url"
+				android:textColorHint="#9E9E9E"
+				android:lines="1"
+				android:imeOptions="actionDone" />
+		</LinearLayout>
+		<androidx.cardview.widget.CardView
+			android:id="@+id/cardview1"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_marginLeft="22dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="22dp"
+			android:background="#FFFFFF"
+			app:cardCornerRadius="12dp"
+			app:cardBackgroundColor="#FFFFFF"
+			app:cardElevation="0dp"
+			android:elevation="0dp">
+			<Button
+				android:id="@+id/button1"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:padding="8dp"
+				android:background="#FFC107"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="NEXT"
+				android:textSize="18sp"
+				android:textColor="#000000" />
+		</androidx.cardview.widget.CardView>
+	</LinearLayout>
+</LinearLayout>

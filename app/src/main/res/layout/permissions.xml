@@ -10,7 +10,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:padding="8dp"
-		android:background="#FFFFFF"
+		android:background="#212121"
 		android:gravity="center_horizontal|center_vertical"
 		android:orientation="vertical">
 		<LinearLayout
@@ -37,16 +37,16 @@
 				android:text="Storage Permission"
 				android:textSize="18sp"
 				android:textStyle="bold"
-				android:textColor="#7289DA" />
+				android:textColor="#FFC107" />
 			<TextView
 				android:id="@+id/textview2"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:padding="8dp"
 				android:gravity="center_horizontal|center_vertical"
-				android:text="Edit Like Requires Storage Permission to Continue Editing Videos. Press Allow to Continue and exit to deny."
+				android:text="Requires Storage Permission to Continue Editing Videos. Press Allow to Continue and exit to deny."
 				android:textSize="14sp"
-				android:textColor="#616161" />
+				android:textColor="#BDBDBD" />
 		</LinearLayout>
 		<LinearLayout
 			android:id="@+id/linear3"
@@ -58,24 +58,23 @@
 			android:paddingBottom="40dp"
 			android:gravity="bottom"
 			android:orientation="vertical">
-			<LinearLayout
-				android:id="@+id/allow"
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview1"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:padding="8dp"
-				android:gravity="center_horizontal"
-				android:orientation="horizontal"
-				android:background="@drawable/defaultround">
-				<TextView
-					android:id="@+id/textview3"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+				app:cardElevation="10dp"
+				app:cardCornerRadius="20dp">
+				<Button
+					android:id="@+id/button1"
+					android:layout_width="match_parent"
+					android:layout_height="55dp"
 					android:padding="8dp"
+					android:background="#FFC107"
 					android:text="ALLOW"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-			</LinearLayout>
+					android:textSize="18sp"
+					android:textColor="#000000" />
+			</androidx.cardview.widget.CardView>
 		</LinearLayout>
 	</LinearLayout>
 </LinearLayout>
